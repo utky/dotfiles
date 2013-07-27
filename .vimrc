@@ -52,6 +52,8 @@ NeoBundleLazy "eagletmt/unite-haddock",      {"autoload" : { "filetypes" : ["has
 NeoBundleLazy "ujihisa/neco-ghc",            {"autoload" : { "filetypes" : ["haskell"] }}
 NeoBundleLazy "ujihisa/unite-haskellimport", {"autoload" : { "filetypes" : ["haskell"] }}
 
+NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+
 " NeoBundleLazy 'c9s/perlomni.vim'
 " Windows用でも.vimディレクトリをベースにしちゃう
 if has('win32')
@@ -260,6 +262,9 @@ function! Today()
   return strftime("%Y-%m-%d %T")
 endfunction
 
+function! Tstamp()
+  return strftime("%Y-%m-%d %T")
+endfunction
 
 "---------------------------------------------------------------------------
 " Workspace Settings
@@ -284,7 +289,7 @@ let g:unite_enable_split_vertically=0
 let g:unite_data_directory=expand('~/.unite')
 
 " 
-let g:unite_kind_openable_lcd_command=lcd
+let g:unite_kind_openable_lcd_command="lcd"
 
 nnoremap <silent> <Leader>u :<C-u>Unite register -buffer-name=registers<CR>
 
@@ -292,6 +297,7 @@ nnoremap <silent> <Leader>r :<C-u>Unite register -buffer-name=registers<CR>
 nnoremap <silent> <Leader>b :<C-u>Unite buffer -buffer-name=buffers<CR>
 nnoremap <silent> <Leader>o :<C-u>Unite outline -buffer-name=outline<CR>
 nnoremap <silent> <Leader>ff :<C-u>Unite file_rec/async:! -buffer-name=files<CR>
+nnoremap <silent> <Leader>fd :<C-u>Unite directory -buffer-name=explorer<CR>
 nnoremap <silent> <Leader>tt :<C-u>Unite tweetvim -buffer-name=tweetvim<CR>
 "}}}
 
@@ -326,6 +332,11 @@ nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -winwid
 let g:neocomplcache_enable_at_startup = 1
 " Manually boot though enable on startup
 let g:neocomplcache_disable_auto_complete = 1
+
+let g:neocomplcache_max_list = 20
+
+inoremap <expr><C-Space>  neocomplcache#start_manual_complete()
+
 "}}}
 
 " Memolist"{{{

@@ -204,13 +204,17 @@ if has('win32')
   set guifont=MS_Gothic:h12:cSHIFTJIS
   "set guifont=MS_Mincho:h12:cSHIFTJIS
   " 行間隔の設定
-  set linespace=1
+  set linespace=3
   " 一部のUCS文字の幅を自動計測して決める
   if has('kaoriya')
     set ambiwidth=auto
   endif
 elseif has('gui_macvim')
-  set guifont=Andale_Mono:h14
+  "set guifont=Andale_Mono:h14
+  set guifont=Ubuntu_Mono_derivative_Powerline:h14
+  "set guifont=Source_Code_Pro_for_Powerline:h14
+  
+  set linespace=2
 elseif has('mac')
   set guifont=Osaka－等幅:h14
 elseif has('xfontset')
