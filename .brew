@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+brew update
+
+brew upgrade
+
+brew install fontforge
+
+brew install macvim
+
+brew install gradle

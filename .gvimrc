@@ -211,8 +211,11 @@ if has('win32')
   endif
 elseif has('gui_macvim')
   "set guifont=Andale_Mono:h14
-  set guifont=Ubuntu_Mono_derivative_Powerline:h14
+  set guifont=Ubuntu_Mono_derivative_Powerline:h14,Ubuntu_Mono_derivative_Powerline_Bold:h14,Ubuntu_Mono_derivative_Powerline_Italic:h14
+
+
   "set guifont=Source_Code_Pro_for_Powerline:h14
+  "set guifontset=Ubuntu_Mono_derivative_Powerline:h14
   
   set linespace=2
 elseif has('mac')

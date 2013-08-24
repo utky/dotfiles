@@ -28,8 +28,10 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'h1mesuke/unite-outline'
+
+NeoBundle 'tpope/vim-fugitive'
+
 NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'altercation/vim-colors-solarized'
 
 " TweetVim
 NeoBundle 'basyura/bitly.vim'
@@ -52,7 +54,10 @@ NeoBundleLazy "eagletmt/unite-haddock",      {"autoload" : { "filetypes" : ["has
 NeoBundleLazy "ujihisa/neco-ghc",            {"autoload" : { "filetypes" : ["haskell"] }}
 NeoBundleLazy "ujihisa/unite-haskellimport", {"autoload" : { "filetypes" : ["haskell"] }}
 
-NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+" UI Plugins
+NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+NeoBundle 'bling/vim-airline'
 
 " NeoBundleLazy 'c9s/perlomni.vim'
 " Windows用でも.vimディレクトリをベースにしちゃう
@@ -137,6 +142,7 @@ set title
 "colorscheme evening " (Windows用gvim使用時はgvimrcを編集すること)
 " カーソル行のハイライト（これgvimだけ？）
 set nocursorline
+
 "}}}
 
 "---------------------------------------------------------------------------
@@ -151,6 +157,8 @@ set directory=$HOME
 let g:netrw_altv=1
 let g:netrw_alto=1
 let g:netrw_winsize=60
+
+
 
 " Key Mapping Configuration"{{{
 "---------------------------------------------------------------------------
@@ -212,6 +220,18 @@ nnoremap <silent> <Leader>sg :<C-u>source $MYGVIMRC<CR>
 "}}}
 
 "---------------------------------------------------------------------------
+" IME Controll Settings
+"---------------------------------------------------------------------------
+"if has('multi_byte_ime')
+" highlight CursorIM guifg=NONE guibg=Purple
+"fi
+
+" ime setting
+"if has('multi_byte_ime') || has('xim') || has('gui_macvim')
+"  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+"endif
+
+"---------------------------------------------------------------------------
 " 自動コマンド
 "---------------------------------------------------------------------------
 " vimgrep実行と同時にQuickfixウィンドウを開く
@@ -243,16 +263,16 @@ augroup END
 " augroup END
 
 " 挿入モードでステータスラインの色を変更する
-let g:hi_insert = 'highlight StatusLine guifg=darkmagenta guibg=darkgray gui=bold ctermfg=blue ctermbg=darkgray cterm=none'
-let g:hi_normal = 'highlight StatusLine guifg=darkblue guibg=darkgray gui=none ctermfg=darkblue ctermbg=darkyellow cterm=none'
+"let g:hi_insert = 'highlight StatusLine guifg=darkmagenta guibg=darkgray gui=bold ctermfg=blue ctermbg=darkgray cterm=none'
+"let g:hi_normal = 'highlight StatusLine guifg=darkblue guibg=darkgray gui=none ctermfg=darkblue ctermbg=darkyellow cterm=none'
 
-if has('syntax')
-    augroup InsertHook
-    autocmd!
-	autocmd InsertEnter * silent exec g:hi_insert
-	autocmd InsertLeave * silent exec g:hi_normal
-    augroup END
-endif
+"if has('syntax')
+"    augroup InsertHook
+"    autocmd!
+"	autocmd InsertEnter * silent exec g:hi_insert
+"	autocmd InsertLeave * silent exec g:hi_normal
+"    augroup END
+"endif
 
 
 "---------------------------------------------------------------------------
@@ -310,7 +330,7 @@ let g:vimfiler_safe_mode_by_default=0
 let g:vimfiler_enable_auto_cd=1
 let g:vimfiler_split_action="right"
 let g:vimfiler_split_rule="topleft"
-let g:vimfiler_max_filename_width=50
+"let g:vimfiler_max_filename_width=50
 
 " Like Textmate icons.
 let g:vimfiler_tree_leaf_icon = ' '
@@ -319,7 +339,7 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 
-nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -winwidth=50 -winheight=15 -toggle -no-quit<CR>
+nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -winwidth=50 -winheight=15 -toggle -quit<CR>
 
 "}}}
 
@@ -361,8 +381,8 @@ map <Leader>mg  :MemoGrep<CR>
 noremap <silent> <Leader>s :<C-u>VimShellTab<CR>
 let g:vimshell_prompt = "vimshell$ "
 let g:vimshell_secondary_prompt = "%%"
-" let g:vimshell_user_prompt = 'getcwd()'
-let g:vimshell_user_prompt = ''
+let g:vimshell_user_prompt = 'getcwd()'
+" let g:vimshell_user_prompt = ''
 
 
 
@@ -377,3 +397,23 @@ nnoremap <silent> <Leader>th :<C-u>TweetVimHomeTimeline<CR>
 " metarw-tumblr
 "---------------------------------------------------------------------------
 let g:metarw#tumblr#default_hostname = 'ilyaletre.tumblr.com'
+
+" airline
+"---------------------------------------------------------------------------
+" airline
+"---------------------------------------------------------------------------
+let g:airline_theme='powerlineish'
+"let g:airline_left_sep=''
+let g:airline_left_sep = '▶'
+let g:airline_left_alt_sep = ''
+"let g:airline_right_sep=''
+let g:airline_right_sep = '◀'
+let g:airline_right_alt_sep = ''
+let g:airline_branch_prefix = ' '
+let g:airline_readonly_symbol = ''
+let g:airline_linecolumn_prefix = ' '
+let g:airline_detect_whitespace=0 "disabled
+let g:airline_powerline_fonts=1
+let g:airline_enable_branch = 1
+
+
