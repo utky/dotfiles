@@ -1,6 +1,8 @@
-# エディタをvimに設定
+# User vim as the default editor
 export EDITOR=vim
 
-# 文字コードをUTF-8に設定
+# Set language to Japanese
 export LANG=ja_JP.UTF-8
 
+# Enable groovy sdk
+export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.3/libexec

@@ -28,6 +28,10 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'Shougo/unite-build'
+NeoBundle 'utky/unite-build-gradle.vim'
+
+NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'tpope/vim-fugitive'
 
@@ -177,6 +181,7 @@ nnoremap <silent> <S-CR> o<ESC>
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
 inoremap <silent> <expr> <C-d> Today()
+inoremap <C-@> <ESC>
 
 " タブの切り替えをChromeと合わせておく
 nnoremap <silent> <C-Tab> :<C-u>tabn<CR>
@@ -230,6 +235,13 @@ nnoremap <silent> <Leader>sg :<C-u>source $MYGVIMRC<CR>
 "if has('multi_byte_ime') || has('xim') || has('gui_macvim')
 "  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 "endif
+
+
+"---------------------------------------------------------------------------
+" コマンド
+"---------------------------------------------------------------------------
+command! -nargs=* Build Unite build <args>
+
 
 "---------------------------------------------------------------------------
 " 自動コマンド
@@ -311,7 +323,6 @@ let g:unite_data_directory=expand('~/.unite')
 " 
 let g:unite_kind_openable_lcd_command="lcd"
 
-nnoremap <silent> <Leader>u :<C-u>Unite register -buffer-name=registers<CR>
 
 nnoremap <silent> <Leader>r :<C-u>Unite register -buffer-name=registers<CR>
 nnoremap <silent> <Leader>b :<C-u>Unite buffer -buffer-name=buffers<CR>
@@ -319,6 +330,7 @@ nnoremap <silent> <Leader>o :<C-u>Unite outline -buffer-name=outline<CR>
 nnoremap <silent> <Leader>ff :<C-u>Unite file_rec/async:! -buffer-name=files<CR>
 nnoremap <silent> <Leader>fd :<C-u>Unite directory -buffer-name=explorer<CR>
 nnoremap <silent> <Leader>tt :<C-u>Unite tweetvim -buffer-name=tweetvim<CR>
+nnoremap <silent> <Leader>ub :<C-u>Build -buffer-name=build<CR>
 "}}}
 
 " VimFiler"{{{
@@ -339,7 +351,7 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 
-nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -winwidth=50 -winheight=15 -toggle -quit<CR>
+nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -toggle -winwidth=65 -no-quit<CR>
 
 "}}}
 
@@ -392,13 +404,18 @@ let g:vimshell_user_prompt = 'getcwd()'
 nnoremap <silent> <Leader>ts :<C-u>TweetVimSay<CR>
 nnoremap <silent> <Leader>th :<C-u>TweetVimHomeTimeline<CR>
 
+"---------------------------------------------------------------------------
+" Quickrun
+"---------------------------------------------------------------------------
+noremap <silent> <Leader>r :<C-u>QuickRun<CR>
+
 
 "---------------------------------------------------------------------------
 " metarw-tumblr
 "---------------------------------------------------------------------------
 let g:metarw#tumblr#default_hostname = 'ilyaletre.tumblr.com'
 
-" airline
+" airline {{{
 "---------------------------------------------------------------------------
 " airline
 "---------------------------------------------------------------------------
@@ -416,4 +433,5 @@ let g:airline_detect_whitespace=0 "disabled
 let g:airline_powerline_fonts=1
 let g:airline_enable_branch = 1
 
+"}}}
 
