@@ -4,8 +4,21 @@ brew update
 
 brew upgrade
 
+brew install libpng
+brew install lua
+brew install luajit
+brew install libtiff
+brew install gettext
+brew install jpeg
+
 brew install fontforge
 
 brew install macvim
 
+brew install groovy
+
 brew install gradle
+
+brew install acscope
+
+brew install play
