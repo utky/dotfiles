@@ -30,7 +30,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Shougo/unite-build'
 NeoBundle 'utky/unite-build-gradle.vim'
-
+NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'thinca/vim-quickrun'
 
 NeoBundle 'tpope/vim-fugitive'
@@ -252,6 +252,14 @@ augroup QuickfixListener
     autocmd QuickfixCmdPost vimgrep cw
 augroup END
 
+augroup FileTypeSettings
+    autocmd!
+    autocmd FileType groovy set tabstop=4|set shiftwidth=4|set expandtab
+    autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
+    autocmd FileType scala set tabstop=2|set shiftwidth=2|set expandtab
+    autocmd FileType scala nnoremap <buffer> <Leader>i :<C-u>VimShellInteractive --split="nicely" sbt<Cr>
+augroup END
+
 "---------------------------------------------------------------------------
 " Input Method関連設定
 "---------------------------------------------------------------------------
@@ -390,7 +398,8 @@ map <Leader>mg  :MemoGrep<CR>
 "---------------------------------------------------------------------------
 " Vimshell
 "---------------------------------------------------------------------------
-noremap <silent> <Leader>s :<C-u>VimShellTab<CR>
+noremap <silent> <Leader>s :<C-u>VimShellPop -buffer-name="vimshell"<CR>
+let g:vimshell_popup_height = 25
 let g:vimshell_prompt = "vimshell$ "
 let g:vimshell_secondary_prompt = "%%"
 let g:vimshell_user_prompt = 'getcwd()'
