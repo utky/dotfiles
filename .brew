@@ -21,4 +21,8 @@ brew install gradle
 
 brew install acscope
 
+brew install scala
+
+brew install sbt
+
 brew install play
