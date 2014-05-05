@@ -11,4 +11,4 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.3/libexec
 export GRAILS_HOME=~/Library/grails-2.3.4
 
 # Export user specific path
-export PATH="$PATH:$GRAILS_HOME/bin"
+export PATH="$PATH:$HOME/bin:$GRAILS_HOME/bin"
