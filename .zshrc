@@ -10,5 +10,8 @@ export GROOVY_HOME=/usr/local/Cellar/groovy/2.1.3/libexec
 # Enable grails tools
 export GRAILS_HOME=~/Library/grails-2.3.4
 
+# Haskell home
+export GHC_HOME=~/Library/Haskell
+
 # Export user specific path
-export PATH="$PATH:$HOME/bin:$GRAILS_HOME/bin"
+export PATH="$PATH:$HOME/bin:$GRAILS_HOME/bin:$GHC_HOME/bin"
