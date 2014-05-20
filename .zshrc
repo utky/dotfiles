@@ -14,4 +14,4 @@ export GRAILS_HOME=~/Library/grails-2.3.4
 export GHC_HOME=~/Library/Haskell
 
 # Export user specific path
-export PATH="$PATH:$HOME/bin:$GRAILS_HOME/bin:$GHC_HOME/bin"
+export PATH="$PATH:$HOME/bin:$GRAILS_HOME/bin"

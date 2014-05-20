@@ -161,6 +161,7 @@ set nocursorline
 " バックアップファイルを作成しない (次行の先頭の " を削除すれば有効になる)
 set nobackup
 set backupdir=$HOME
+set undodir=$HOME/.vimundo
 " スワップファイルの設定
 set directory=$HOME
 " netrwにてファイラペインが左、エディタバッファが右で開く
@@ -255,14 +256,15 @@ command! -nargs=* Build Unite build <args>
 " vimgrep実行と同時にQuickfixウィンドウを開く
 augroup QuickfixListener
     autocmd!
-    autocmd QuickfixCmdPost vimgrep cw
+    " autocmd QuickfixCmdPost vimgrep cw
 augroup END
 
 augroup FileTypeSettings
     autocmd!
-    autocmd FileType groovy set tabstop=4|set shiftwidth=4|set expandtab
-    autocmd FileType java set tabstop=4|set shiftwidth=4|set expandtab
-    autocmd FileType scala set tabstop=2|set shiftwidth=2|set expandtab
+    autocmd FileType groovy setl tabstop=4|setl shiftwidth=4|setl expandtab
+    autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl expandtab
+    autocmd FileType scala setl tabstop=2|setl shiftwidth=2|setl expandtab
+    autocmd FileType haskell setl tabstop=4|setl shiftwidth=4|setl expandtab
     autocmd FileType scala nnoremap <buffer> <Leader>i :<C-u>VimShellInteractive --split="nicely" sbt<Cr>
 augroup END
 
