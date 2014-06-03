@@ -265,6 +265,7 @@ augroup FileTypeSettings
     autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl expandtab
     autocmd FileType scala setl tabstop=2|setl shiftwidth=2|setl expandtab
     autocmd FileType haskell setl tabstop=4|setl shiftwidth=4|setl expandtab
+    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
     autocmd FileType scala nnoremap <buffer> <Leader>i :<C-u>VimShellInteractive --split="nicely" sbt<Cr>
 augroup END
 
@@ -367,7 +368,7 @@ let g:vimfiler_tree_closed_icon = '▸'
 let g:vimfiler_file_icon = '-'
 let g:vimfiler_marked_file_icon = '*'
 
-nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -toggle -winwidth=65 -no-quit<CR>
+nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -toggle -winwidth=65 -quit<CR>
 
 "}}}
 
