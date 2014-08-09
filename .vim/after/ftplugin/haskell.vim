@@ -11,21 +11,16 @@ setlocal shiftwidth=4
 setlocal expandtab
 setlocal omnifunc=necoghc#omnifunc
 
-function! l:package_conf_path()
-    let l:pd = unite#util#path2project_directory(expand('%'))
-    return l:pd . '/cabal-dev/packages-7.6.3.conf'
-endfunction
-
 let maplocalleader='\'
 nnoremap <buffer> <LocalLeader>t :<C-u>GhcModType<CR>
 nnoremap <buffer> <LocalLeader>T :<C-u>GhcModTypeInsert<CR>
-nnoremap <buffer> <LocalLeader>c :<C-u>GhcModCheck<CR>
+nnoremap <buffer> <LocalLeader>c :<C-u>GhcModCheckAsync<CR>
 nnoremap <buffer> <LocalLeader>q :<C-u>GhcModTypeClear<CR>
 nnoremap <buffer> <LocalLeader>i :<C-u>GhcModInfo<CR>
 
 augroup Haskell
     autocmd!
-    autocmd BufWritePost <buffer> GhcModCheck
+    autocmd BufWritePost <buffer> GhcModCheckAsync
     autocmd BufEnter <buffer> call s:setup_ghcmod()
 augroup END
 
@@ -34,8 +29,6 @@ function! s:setup_ghcmod()
   " Add '-nocode' for performance
   let b:ghcmod_ghc_options = ['-nocode', '-fdefer-type-errors']
   
-  " call add(b:ghcmod_ghc_options, '--package-db=' . l:package_conf_path())
-  " call add(b:ghcmod_ghc_options, '-v')
 
   " Setup src and test directories
   let src_dir = finddir('src', '.;')

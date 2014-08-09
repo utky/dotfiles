@@ -263,6 +263,8 @@ augroup FileTypeSettings
     autocmd!
     autocmd FileType groovy setl tabstop=4|setl shiftwidth=4|setl expandtab
     autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl expandtab
+    autocmd FileType html setl tabstop=4|setl shiftwidth=4|setl noexpandtab
+    autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl noexpandtab
 augroup END
 
 "---------------------------------------------------------------------------
