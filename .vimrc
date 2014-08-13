@@ -63,6 +63,8 @@ NeoBundle 'altercation/vim-colors-solarized'
 "NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 NeoBundle 'bling/vim-airline'
 
+NeoBundle 'kchmck/vim-coffee-script'
+"
 " NeoBundleLazy 'c9s/perlomni.vim'
 " Windows用でも.vimディレクトリをベースにしちゃう
 if has('win32')
@@ -175,7 +177,7 @@ let g:netrw_winsize=60
 "---------------------------------------------------------------------------
 " キーマッピングの設定
 "---------------------------------------------------------------------------
-let mapleader = ' '
+let mapleader = 's'
 
 " 挿入/ヴィジュアルモードの時にノーマルモードへと戻る
 noremap! <silent> <S-CR> <ESC>
