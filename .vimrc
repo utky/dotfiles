@@ -421,6 +421,7 @@ let g:vimshell_user_prompt = 'getcwd()'
 "---------------------------------------------------------------------------
 nnoremap <silent> <Leader>ts :<C-u>TweetVimSay<CR>
 nnoremap <silent> <Leader>th :<C-u>TweetVimHomeTimeline<CR>
+let g:tweetvim_display_icon = 0
 
 "---------------------------------------------------------------------------
 " Quickrun

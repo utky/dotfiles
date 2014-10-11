@@ -26,3 +26,7 @@ brew install scala
 brew install sbt
 
 brew install play
+
+brew install imagemagick
+
+brew install ssreflect
