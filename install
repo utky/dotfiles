@@ -7,7 +7,7 @@ import os
 import os.path as path
 import functools
 
-EXCLUDE_FILES = (".git", "*.markdown")
+EXCLUDE_FILES = (".git", "*.markdown", path.basename(__file__))
 
 def isexcluded(f):
     for e in EXCLUDE_FILES:
@@ -21,11 +21,9 @@ def main(args):
     else:
         targetdir = path.expanduser("~")
 
-    jointarget = functools.partial(join, targetdir)
-
     scriptpath = __file__
     basedir = path.dirname(scriptpath)
-    sourcefiles = [s for s in os.listdir(basedir) if not isexcluded(s)]
+    sourcefiles = [path.abspath(s) for s in os.listdir(basedir) if not isexcluded(s) and path.isfile(s)]
 
     filenames = [path.basename(s) for s in sourcefiles]
     dotted = ["." + f for f in filenames]
@@ -33,6 +31,7 @@ def main(args):
 
     for (s, t) in zip(sourcefiles, targetfiles):
         os.symlink(s, t)
+        print(t)
 
     return targetfiles
 
