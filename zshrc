@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ilyaletre"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/ilyaletre/bin:/Users/ilyaletre/Library/grails-2.3.4/bin:/Users/ilyaletre/bin:/Users/ilyaletre/Library/grails-2.3.4/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Applications/TeXLive/Library/texlive/2013/bin/x86_64-darwin:/Applications/TeXLive/Library/mactexaddons/bin"
+export PATH="$HOME/bin:$HOME/Library/grails-2.3.4/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/git/bin:/Applications/TeXLive/Library/texlive/2013/bin/x86_64-darwin:/Applications/TeXLive/Library/mactexaddons/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment

@@ -30,8 +30,9 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'Shougo/unite-build'
 NeoBundle 'utky/unite-build-gradle.vim'
-NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'thinca/vim-quickrun'
+
+NeoBundle 'derekwyatt/vim-scala'
 
 NeoBundle 'tpope/vim-fugitive'
 
