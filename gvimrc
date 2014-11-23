@@ -71,7 +71,7 @@ endif " !exists("macvim_skip_cmd_opt_movement")
 
 
 if has('gui_macvim')
-    set transparency=15
+    set transparency=8
 endif
 " This is so that the HIG shift movement related settings can be enabled by
 " adding the line

@@ -78,3 +78,4 @@ export PATH="$HOME/bin:$HOME/Library/grails-2.3.4/bin:/usr/bin:/bin:/usr/sbin:/s
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"

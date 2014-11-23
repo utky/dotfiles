@@ -190,7 +190,6 @@ nnoremap <silent> <S-CR> o<ESC>
 " 一般的なIDEライクな補完キー
 inoremap <C-Space> <C-n>
 inoremap <C-S-Space> <C-p>
-inoremap <silent> <expr> <C-d> Today()
 inoremap <C-@> <ESC>
 
 " タブの切り替えをChromeと合わせておく
@@ -264,10 +263,26 @@ augroup END
 
 augroup FileTypeSettings
     autocmd!
-    autocmd FileType groovy setl tabstop=4|setl shiftwidth=4|setl expandtab
-    autocmd FileType java setl tabstop=4|setl shiftwidth=4|setl expandtab
-    autocmd FileType html setl tabstop=4|setl shiftwidth=4|setl noexpandtab
-    autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl noexpandtab
+    autocmd FileType groovy 
+          \setl tabstop=4
+          \|setl shiftwidth=4
+          \|setl expandtab
+    autocmd FileType java 
+          \setl tabstop=4
+          \|setl shiftwidth=4
+          \|setl expandtab
+    autocmd FileType html
+          \setl tabstop=4
+          \|setl shiftwidth=4
+          \|setl noexpandtab
+    autocmd FileType javascript
+          \setl tabstop=4
+          \|setl shiftwidth=4
+          \|setl noexpandtab
+    autocmd FileType scheme
+          \setl tabstop=2
+          \|setl shiftwidth=2
+          \|setl expandtab
 augroup END
 
 "---------------------------------------------------------------------------
@@ -308,11 +323,11 @@ augroup END
 "---------------------------------------------------------------------------
 " 関数
 "---------------------------------------------------------------------------
-function! Today()
-  return strftime("%Y-%m-%d %T")
+function! s:Today()
+  return strftime("%Y-%m-%d")
 endfunction
 
-function! Tstamp()
+function! s:Tstamp()
   return strftime("%Y-%m-%d %T")
 endfunction
 
@@ -344,6 +359,7 @@ let g:unite_kind_openable_lcd_command="lcd"
 
 nnoremap <silent> <Leader>r :<C-u>Unite register -buffer-name=registers<CR>
 nnoremap <silent> <Leader>b :<C-u>Unite buffer -buffer-name=buffers<CR>
+nnoremap <silent> <Leader>w :<C-u>Unite window -buffer-name=windows<CR>
 nnoremap <silent> <Leader>o :<C-u>Unite outline -buffer-name=outline<CR>
 nnoremap <silent> <Leader>ff :<C-u>Unite file_rec/async:! -buffer-name=files<CR>
 nnoremap <silent> <Leader>fd :<C-u>Unite directory -buffer-name=explorer<CR>
@@ -423,6 +439,7 @@ let g:vimshell_user_prompt = 'getcwd()'
 nnoremap <silent> <Leader>ts :<C-u>TweetVimSay<CR>
 nnoremap <silent> <Leader>th :<C-u>TweetVimHomeTimeline<CR>
 let g:tweetvim_display_icon = 0
+let g:tweetvim_display_time = 1
 
 "---------------------------------------------------------------------------
 " Quickrun
