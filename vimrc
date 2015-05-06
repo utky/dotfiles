@@ -409,13 +409,14 @@ inoremap <expr><C-Space>  neocomplcache#start_manual_complete()
 "---------------------------------------------------------------------------
 " Memolist
 "---------------------------------------------------------------------------
-let g:memolist_path="~/Dropbox/memolist"
-let g:memolist_memo_suffix = "markdown"
+let g:memolist_path = expand('$MEMOLIST/posts')
+let g:memolist_memo_suffix = "mkd"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 let g:memolist_prompt_tags = 1
-let g:memolist_prompt_categories = 1
+let g:memolist_prompt_categories = 0
 let g:memolist_qfixgrep = 0
 let g:memolist_vimfiler = 1
+let g:memolist_template_dir_path = expand('$MEMOLIST/templates')
 map <Leader>mn  :MemoNew<CR>
 map <Leader>ml  :MemoList<CR>
 map <Leader>mg  :MemoGrep<CR>

@@ -1,39 +1,35 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#!/bin/sh
 
-import sys
-import fnmatch
-import os
-import os.path as path
-import functools
 
-EXCLUDE_FILES = (".git", "*.markdown", path.basename(__file__))
+SCRIPTDIR=`dirname $0`
+TARGET=${HOME}
 
-def isexcluded(f):
-    for e in EXCLUDE_FILES:
-        if fnmatch.fnmatch(f, e):
-            return True
-    return False
+pushd ${SCRIPTDIR}
+DOTFILES=$(pwd)
+popd 
 
-def main(args):
-    if 1 < len(args):
-        targetdir = args[1]
-    else:
-        targetdir = path.expanduser("~")
+if [ -d "$1" ] ; then
+    TARGET=$1
+fi
 
-    scriptpath = __file__
-    basedir = path.dirname(scriptpath)
-    sourcefiles = [path.abspath(s) for s in os.listdir(basedir) if not isexcluded(s) and path.isfile(s)]
+if [ -z "${TARGET}" ] ; then
+    echo "Usage: target-path"
+    exit 1
+fi
 
-    filenames = [path.basename(s) for s in sourcefiles]
-    dotted = ["." + f for f in filenames]
-    targetfiles = [path.join(targetdir, f) for f in dotted]
 
-    for (s, t) in zip(sourcefiles, targetfiles):
-        os.symlink(s, t)
-        print(t)
+function copy_target() {
+    homefiles="ghci gvimrc vimrc zshrc gitconfig zshenv"
+    pushd "${TARGET}"
+    for i in ${homefiles} ; do
+      ln -s "${DOTFILES}/$i" ".$i"
+    done
+    popd
+}
 
-    return targetfiles
+function main() {
+    copy_target
+}
 
-if __name__ == "__main__":
-    main(sys.argv)
+
+main
