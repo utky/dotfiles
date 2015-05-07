@@ -17,8 +17,36 @@ if [ -z "${TARGET}" ] ; then
     exit 1
 fi
 
+function setup_nix() {
 
-function copy_target() {
+    which nix-env
+    local nixenvexists=$?
+
+    if [ ${nixenvexists} -ne 0 ] ; then
+        echo "Installing nix..."
+        curl https://nixos.org/nix/install | sh
+    else
+        echo "Nix has already been installed. Skip installing."
+    fi
+    
+
+    if [ ! -f "/etc/nix/nix.conf" ] ; then
+        echo "Creation /etc/nix/nix.conf ...."
+
+        sudo mkdir -p /etc/nix
+        echo "binary-caches = http://zalora-public-nix-cache.s3-website-ap-southeast-1.amazonaws.com/ http://cache.nixos.org/" | sudo tee /etc/nix/nix.conf
+    fi
+
+    
+    echo "Creating local nix config..."
+    mkdir -p "${HOME}/.nixpkgs"
+    pushd "${HOME}/.nixpkgs"
+    ln -s "${DOTFILES}/config.nix" "config.nix"
+    popd
+
+}
+
+function copy_dotfiles() {
     homefiles="ghci gvimrc vimrc zshrc gitconfig zshenv"
     pushd "${TARGET}"
     for i in ${homefiles} ; do
@@ -28,7 +56,8 @@ function copy_target() {
 }
 
 function main() {
-    copy_target
+    copy_dotfiles
+    setup_nix
 }
 
 
