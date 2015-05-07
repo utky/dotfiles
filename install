@@ -46,6 +46,23 @@ function setup_nix() {
 
 }
 
+# fonts fot MacVim powerline
+function download_font() {
+    local fontdir="${HOME}/Library/Fonts"
+    if [ ! -d "${fontdir}" ] ; then
+        mkdir -p "${fontdir}"
+    fi
+    pushd ${fontdir}
+    if [ -d "${fontdir}/fonts" ] ; then
+        pushd fonts
+        git pull
+        popd
+    else
+        git clone https://github.com/powerline/fonts.git
+    fi
+    popd
+}
+
 function copy_dotfiles() {
     homefiles="ghci gvimrc vimrc zshrc gitconfig zshenv"
     pushd "${TARGET}"
