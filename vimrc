@@ -58,6 +58,7 @@ NeoBundleLazy "eagletmt/ghcmod-vim",         {"autoload" : { "filetypes" : ["has
 NeoBundleLazy "eagletmt/unite-haddock",      {"autoload" : { "filetypes" : ["haskell"] }}
 NeoBundleLazy "ujihisa/neco-ghc",            {"autoload" : { "filetypes" : ["haskell"] }}
 NeoBundleLazy "ujihisa/unite-haskellimport", {"autoload" : { "filetypes" : ["haskell"] }}
+NeoBundleLazy "scrooloose/syntastic",        {"autoload" : { "filetypes" : ["haskell"] }}
 
 " UI Plugins
 NeoBundle 'altercation/vim-colors-solarized'
@@ -245,11 +246,33 @@ nnoremap <silent> <Leader>sg :<C-u>source $MYGVIMRC<CR>
 "  inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 "endif
 
+"---------------------------------------------------------------------------
+" 関数
+"---------------------------------------------------------------------------
+function! s:Today()
+  return strftime("%Y-%m-%d")
+endfunction
+
+function! s:Tstamp()
+  return strftime("%Y-%m-%d %T")
+endfunction
+
+" short cut 
+function! s:pjroot()
+  return unite#util#path2project_directory(expand('%'))
+endfunction
+
+" Change directory to project root
+function! Projectdir()
+  let root = pjroot()
+  execute 'lcd' root
+endfunction
 
 "---------------------------------------------------------------------------
 " コマンド
 "---------------------------------------------------------------------------
 command! -nargs=* Build Unite build <args>
+command! Project :call Projectdir()
 
 
 "---------------------------------------------------------------------------
@@ -258,7 +281,7 @@ command! -nargs=* Build Unite build <args>
 " vimgrep実行と同時にQuickfixウィンドウを開く
 augroup QuickfixListener
     autocmd!
-    " autocmd QuickfixCmdPost vimgrep cw
+    autocmd QuickfixCmdPost vimgrep cw
 augroup END
 
 augroup FileTypeSettings
@@ -319,17 +342,6 @@ augroup END
 "    augroup END
 "endif
 
-
-"---------------------------------------------------------------------------
-" 関数
-"---------------------------------------------------------------------------
-function! s:Today()
-  return strftime("%Y-%m-%d")
-endfunction
-
-function! s:Tstamp()
-  return strftime("%Y-%m-%d %T")
-endfunction
 
 "---------------------------------------------------------------------------
 " Workspace Settings
