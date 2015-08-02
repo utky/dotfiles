@@ -2,72 +2,44 @@
 " Viに互換させたらアカンていう設定
 set nocompatible
 
-" NeoBundle Condiguration"{{{
+" Vundle Condiguration"{{{
 "---------------------------------------------------------------------------
-" ここからはneobundle用の設定開始
+" ここからはVundle用の設定開始
 "---------------------------------------------------------------------------
 
 filetype plugin indent off
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim
-  call neobundle#rc(expand('~/.vim/bundle/'))
-endif
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
 " originalrepos on github
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc', {
-  \ 'build' : {
-    \ 'windows' : 'make -f make_mingw32.mak',
-    \ 'cygwin' : 'make -f make_cygwin.mak',
-    \ 'mac' : 'make -f make_mac.mak',
-    \ 'unix' : 'make -f make_unix.mak',
-  \ },
-\ }
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'Shougo/unite-build'
-NeoBundle 'utky/unite-build-gradle.vim'
-NeoBundle 'thinca/vim-quickrun'
+Plugin 'gmarik/Vundle.vim'
 
-NeoBundle 'derekwyatt/vim-scala'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mattn/ctrlp-filer'
+Plugin 'mattn/ctrlp-register'
 
-NeoBundle 'tpope/vim-fugitive'
+" Git Plugin
+Plugin 'tpope/vim-fugitive'
 
-NeoBundle 'glidenote/memolist.vim'
+" Scala plugin
+Plugin 'derekwyatt/vim-scala'
 
-" TweetVim
-NeoBundle 'basyura/bitly.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'yomi322/neco-tweetvim'
-NeoBundle 'yomi322/unite-tweetvim'
-NeoBundleLazy 'basyura/TweetVim', { 'depends' :
-      \ ['basyura/twibill.vim', 'tyru/open-browser.vim'],
-      \ 'autoload' : { 'commands' : 'TweetVimHomeTimeline' }}
-      " \ ['basyura/twibill.vim', 'tyru/open-browser.vim', 'yomi322/neco-tweetvim'] }
+" Text editting plugin
+Plugin 'glidenote/memolist.vim'
 
-" metarw-tumblr
-NeoBundle 'kana/vim-metarw'
-NeoBundle 'hara/vim-metarw-tumblr'
-
-" haskell
-NeoBundleLazy "dag/vim2hs",                  {"autoload" : { "filetypes" : ["haskell"] }}
-NeoBundleLazy "eagletmt/ghcmod-vim",         {"autoload" : { "filetypes" : ["haskell"] }}
-NeoBundleLazy "eagletmt/unite-haddock",      {"autoload" : { "filetypes" : ["haskell"] }}
-NeoBundleLazy "ujihisa/neco-ghc",            {"autoload" : { "filetypes" : ["haskell"] }}
-NeoBundleLazy "ujihisa/unite-haskellimport", {"autoload" : { "filetypes" : ["haskell"] }}
-NeoBundleLazy "scrooloose/syntastic",        {"autoload" : { "filetypes" : ["haskell"] }}
+" Haskell plugin
+Plugin 'dag/vim2hs'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'scrooloose/syntastic'
 
 " UI Plugins
-NeoBundle 'altercation/vim-colors-solarized'
-"NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-NeoBundle 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
+Plugin 'bling/vim-airline'
 
-NeoBundle 'kchmck/vim-coffee-script'
+call vundle#end()            " required
 "
-" NeoBundleLazy 'c9s/perlomni.vim'
 " Windows用でも.vimディレクトリをベースにしちゃう
 if has('win32')
   set runtimepath^=$HOME/.vim
@@ -257,22 +229,9 @@ function! s:Tstamp()
   return strftime("%Y-%m-%d %T")
 endfunction
 
-" short cut 
-function! s:pjroot()
-  return unite#util#path2project_directory(expand('%'))
-endfunction
-
-" Change directory to project root
-function! Projectdir()
-  let root = pjroot()
-  execute 'lcd' root
-endfunction
-
 "---------------------------------------------------------------------------
 " コマンド
 "---------------------------------------------------------------------------
-command! -nargs=* Build Unite build <args>
-command! Project :call Projectdir()
 
 
 "---------------------------------------------------------------------------
@@ -352,68 +311,17 @@ let g:ilyaletre_workspace_dir=expand('~/workspace')
 " Plugin Configurations
 "===========================================================================
 
-" Unite Vim"{{{
+" CtrlP"{{{
 "---------------------------------------------------------------------------
-" Unite Basic
+" CtrlP
 "---------------------------------------------------------------------------
-" Starting with insert mode when open unite buffer.
-let g:unite_enable_start_insert=1
-
-" Prefer vertical splitting
-let g:unite_enable_split_vertically=0
-
-" Set unite work directory
-let g:unite_data_directory=expand('~/.unite')
-
-" 
-let g:unite_kind_openable_lcd_command="lcd"
-
-
-nnoremap <silent> <Leader>r :<C-u>Unite register -buffer-name=registers<CR>
-nnoremap <silent> <Leader>b :<C-u>Unite buffer -buffer-name=buffers<CR>
-nnoremap <silent> <Leader>w :<C-u>Unite window -buffer-name=windows<CR>
-nnoremap <silent> <Leader>o :<C-u>Unite outline -buffer-name=outline<CR>
-nnoremap <silent> <Leader>ff :<C-u>Unite file_rec/async:! -buffer-name=files<CR>
-nnoremap <silent> <Leader>fd :<C-u>Unite directory -buffer-name=explorer<CR>
-nnoremap <silent> <Leader>tt :<C-u>Unite tweetvim -buffer-name=tweetvim<CR>
-nnoremap <silent> <Leader>ub :<C-u>Build -buffer-name=build<CR>
-"}}}
-
-" VimFiler"{{{
-"---------------------------------------------------------------------------
-" VimFiler
-"---------------------------------------------------------------------------
-let g:vimfiler_as_default_explorer=1
-let g:vimfiler_safe_mode_by_default=0
-let g:vimfiler_enable_auto_cd=1
-let g:vimfiler_split_action="right"
-let g:vimfiler_split_rule="topleft"
-"let g:vimfiler_max_filename_width=50
-
-" Like Textmate icons.
-let g:vimfiler_tree_leaf_icon = ' '
-let g:vimfiler_tree_opened_icon = '▾'
-let g:vimfiler_tree_closed_icon = '▸'
-let g:vimfiler_file_icon = '-'
-let g:vimfiler_marked_file_icon = '*'
-
-nnoremap <silent> <Leader>fe :<C-u>VimFiler -buffer-name=explorer -split -toggle -winwidth=65 -no-quit -auto-cd<CR>
-
-"}}}
-
-" Neocomplcache"{{{
-"---------------------------------------------------------------------------
-" Neocomplcache
-"---------------------------------------------------------------------------
-" Launches neocomplcache automatically on vim startup.
-" Note that switching off neocon achieves to make inserting character comfortably.
-let g:neocomplcache_enable_at_startup = 1
-" Manually boot though enable on startup
-let g:neocomplcache_disable_auto_complete = 1
-
-let g:neocomplcache_max_list = 20
-
-inoremap <expr><C-Space>  neocomplcache#start_manual_complete()
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtBS()':              ['<c-h>'],
+  \ 'PrtCurLeft()':         ['<c-b>'],
+  \ 'PrtCurRight()':        ['<c-f>'],
+  \ }
+nnoremap <silent> <Leader>f :<C-u>CtrlP<CR>
 
 "}}}
 
@@ -435,53 +343,33 @@ map <Leader>mg  :MemoGrep<CR>
 "}}}
 
 "---------------------------------------------------------------------------
-" Vimshell
-"---------------------------------------------------------------------------
-noremap <silent> <Leader>s :<C-u>VimShellPop -buffer-name="vimshell"<CR>
-let g:vimshell_popup_height = 25
-let g:vimshell_prompt = "vimshell$ "
-let g:vimshell_secondary_prompt = "%%"
-let g:vimshell_user_prompt = 'getcwd()'
-" let g:vimshell_user_prompt = ''
-
-
-
-"---------------------------------------------------------------------------
-" TweetVim
-"---------------------------------------------------------------------------
-nnoremap <silent> <Leader>ts :<C-u>TweetVimSay<CR>
-nnoremap <silent> <Leader>th :<C-u>TweetVimHomeTimeline<CR>
-let g:tweetvim_display_icon = 0
-let g:tweetvim_display_time = 1
-
-"---------------------------------------------------------------------------
 " Quickrun
 "---------------------------------------------------------------------------
 noremap <silent> <Leader>r :<C-u>QuickRun<CR>
-
-
-"---------------------------------------------------------------------------
-" metarw-tumblr
-"---------------------------------------------------------------------------
-let g:metarw#tumblr#default_hostname = 'ilyaletre.tumblr.com'
 
 " airline {{{
 "---------------------------------------------------------------------------
 " airline
 "---------------------------------------------------------------------------
 let g:airline_theme='powerlineish'
-"let g:airline_left_sep=''
-let g:airline_left_sep = '▶'
-let g:airline_left_alt_sep = ''
-"let g:airline_right_sep=''
-let g:airline_right_sep = '◀'
-let g:airline_right_alt_sep = ''
+" let g:airline_left_sep=''
+" let g:airline_left_sep = '▶'
+" let g:airline_left_alt_sep = ''
+" let g:airline_right_sep=''
+" let g:airline_right_sep = '◀'
+" let g:airline_right_alt_sep = ''
 let g:airline_branch_prefix = ' '
-let g:airline_readonly_symbol = ''
-let g:airline_linecolumn_prefix = ' '
-let g:airline_detect_whitespace=0 "disabled
+" let g:airline_readonly_symbol = ''
+" let g:airline_linecolumn_prefix = ' '
+" let g:airline_detect_whitespace=0 "disabled
 let g:airline_powerline_fonts=1
 let g:airline_enable_branch = 1
+
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 "}}}
 
