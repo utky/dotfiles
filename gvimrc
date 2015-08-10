@@ -27,7 +27,7 @@ endif
 "   let macvim_skip_colorscheme=1
 " to ~/.vimrc.
 if !exists("macvim_skip_colorscheme") && !exists("colors_name")
-    colorscheme macvim
+    "colorscheme macvim
 endif
 
 " To make tabs more readable, the label only contains the tail of the file
@@ -321,6 +321,6 @@ endif
 " MacVim-KaoriYa固有の設定
 "
 let $SSH_ASKPASS = simplify($VIM . '/../../MacOS') . '/macvim-askpass'
-set noimdisableactivate
+"set noimdisableactivate
 
 " set imdisableactivate
