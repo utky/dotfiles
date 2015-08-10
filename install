@@ -67,9 +67,20 @@ function copy_dotfiles() {
     homefiles="ghci gvimrc vimrc zshrc gitconfig zshenv"
     pushd "${TARGET}"
     for i in ${homefiles} ; do
-      ln -s "${DOTFILES}/$i" ".$i"
+      ln -fs "${DOTFILES}/$i" ".$i"
     done
     popd
+}
+
+function install_ohmyzsh() {
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+
+function install_vundle() {
+    local bundle_path="${HOME}/.vim/bundle"
+    mkdir -p ${bundle_path}
+    git clone https://github.com/gmarik/Vundle.vim.git ${bundle_path}/Vundle.vim
+    cp ilyaletre.zsh-theme ${HOME}/.oh-my-zsh/themes
 }
 
 function main() {
