@@ -38,6 +38,8 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 Plugin 'bling/vim-airline'
 
+Plugin 'vim-scripts/fcitx.vim'
+
 call vundle#end()            " required
 "
 " Windows用でも.vimディレクトリをベースにしちゃう
