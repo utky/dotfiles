@@ -353,7 +353,7 @@ noremap <silent> <Leader>r :<C-u>QuickRun<CR>
 "---------------------------------------------------------------------------
 " airline
 "---------------------------------------------------------------------------
-let g:airline_theme='solarized'
+let g:airline_theme='hybridline'
 let g:airline_detect_iminsert=1
 let g:airline_left_sep = '»'
 let g:airline_right_sep = '«'
