@@ -353,19 +353,11 @@ noremap <silent> <Leader>r :<C-u>QuickRun<CR>
 "---------------------------------------------------------------------------
 " airline
 "---------------------------------------------------------------------------
-let g:airline_theme='powerlineish'
-" let g:airline_left_sep=''
-" let g:airline_left_sep = '▶'
-" let g:airline_left_alt_sep = ''
-" let g:airline_right_sep=''
-" let g:airline_right_sep = '◀'
-" let g:airline_right_alt_sep = ''
-let g:airline_branch_prefix = ' '
-" let g:airline_readonly_symbol = ''
-" let g:airline_linecolumn_prefix = ' '
-" let g:airline_detect_whitespace=0 "disabled
-let g:airline_powerline_fonts=1
-let g:airline_enable_branch = 1
+let g:airline_theme='solarized'
+let g:airline_detect_iminsert=1
+let g:airline_left_sep = '»'
+let g:airline_right_sep = '«'
+
 
 " Syntastic
 let g:syntastic_always_populate_loc_list = 1
