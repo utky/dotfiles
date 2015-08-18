@@ -38,7 +38,10 @@ Plugin 'altercation/vim-colors-solarized'
 "Plugin 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 Plugin 'bling/vim-airline'
 
-Plugin 'vim-scripts/fcitx.vim'
+"Plugin 'vim-scripts/fcitx.vim'
+"Plugin 'fuenor/im_control.vim'
+
+Plugin 'koron/imcsc-vim', {'rtp': 'fcitx-python/'}
 
 call vundle#end()            " required
 "
@@ -163,9 +166,6 @@ vnoremap <silent> <C-k> <ESC>
 nnoremap <silent> <S-CR> o<ESC>
 
 " 一般的なIDEライクな補完キー
-inoremap <C-Space> <C-n>
-inoremap <C-S-Space> <C-p>
-inoremap <C-@> <ESC>
 
 " タブの切り替えをChromeと合わせておく
 nnoremap <silent> <C-Tab> :<C-u>tabn<CR>
@@ -313,6 +313,9 @@ let g:ilyaletre_workspace_dir=expand('~/workspace')
 " Plugin Configurations
 "===========================================================================
 
+let IM_CtrlMode = 6
+inoremap <silent> <C-l> <C-r>=IMState('FixMode')<CR>
+
 " CtrlP"{{{
 "---------------------------------------------------------------------------
 " CtrlP
@@ -340,7 +343,7 @@ let g:memolist_qfixgrep = 0
 let g:memolist_vimfiler = 1
 let g:memolist_template_dir_path = expand('$MEMOLIST/templates')
 map <Leader>mn  :MemoNew<CR>
-map <Leader>ml  :MemoList<CR>
+map <Leader>ml  :exe "CtrlP" g:memolist_path<CR>
 map <Leader>mg  :MemoGrep<CR>
 "}}}
 
