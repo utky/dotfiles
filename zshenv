@@ -2,7 +2,6 @@
 
 if [ -f "${HOME}/.nix-profile/etc/profile.d/nix.sh" ] ; then
     . $HOME/.nix-profile/etc/profile.d/nix.sh
-    export NIX_PATH="nixpkgs=${HOME}/Library/Nix/nixpkgs"
 fi
 export TERM=xterm-256color
 export EDITOR=vim
