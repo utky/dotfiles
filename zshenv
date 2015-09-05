@@ -5,7 +5,7 @@ if [ -f "${HOME}/.nix-profile/etc/profile.d/nix.sh" ] ; then
 fi
 export TERM=xterm-256color
 export EDITOR=vim
-export MEMOLIST=$HOME/workspace/writing/utky.github.io/src
+export MEMOLIST=$HOME/Dropbox/memolist
 export PATH="$PATH:$HOME/bin"
 
 export SBT_OPTS="-Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"
