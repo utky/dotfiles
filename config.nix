@@ -10,7 +10,6 @@
                        hdevtools
                        ghc-mod
                        stack
-                       elm-compiler
                      ]);
 
     ilya-jvm = with self; buildEnv {
