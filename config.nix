@@ -1,6 +1,14 @@
 {
   packageOverrides = super: let self = super.pkgs; in
   {
+    ilya-base = with self; buildEnv {
+      name = "ilya-base";
+      paths = [
+        glibcLocales
+        inotify-tools
+      ];
+    };
+
     ilya-haskell = self.haskell.packages.ghc7102.ghcWithPackages
                      (haskellPackages: with haskellPackages; [
                        cabal-install

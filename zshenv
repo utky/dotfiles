@@ -2,6 +2,7 @@
 
 if [ -f "${HOME}/.nix-profile/etc/profile.d/nix.sh" ] ; then
     . $HOME/.nix-profile/etc/profile.d/nix.sh
+    export LOCALE_ARCHIVE="${HOME}/.nix-profile/lib/locale/locale-archive"
 fi
 export TERM=xterm-256color
 export EDITOR=vim
