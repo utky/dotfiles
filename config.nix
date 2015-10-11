@@ -6,6 +6,8 @@
       paths = [
         glibcLocales
         inotify-tools
+        texLiveFull
+	sqlite
       ];
     };
 
@@ -18,6 +20,7 @@
                        hdevtools
                        ghc-mod
                        stack
+                       hoogle
                      ]);
 
     ilya-jvm = with self; buildEnv {
@@ -25,7 +28,6 @@
       paths = [
         sbt
         leiningen
-        apache-maven
       ];
     };
 
@@ -39,10 +41,10 @@
       ];
     };
 
-    ilya-node = with self; buildEnv {
-      name = "ilya-node";
+    ilya-js = with self; buildEnv {
+      name = "ilya-js";
       paths = [
-        nodejs
+        iojs
       ];
     };
 

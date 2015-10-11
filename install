@@ -17,6 +17,14 @@ if [ -z "${TARGET}" ] ; then
     exit 1
 fi
 
+# this operation depends on nix-env installation
+function setup_stack() {
+    mkdir -p "${HOME}/.stack"
+    pushd "${HOME}/.stack"
+    ln -s "${DOTFILES}/stack.yaml" "stack.yaml"
+    popd
+}
+
 function setup_nix() {
 
     which nix-env
@@ -31,10 +39,11 @@ function setup_nix() {
     
 
     if [ ! -f "/etc/nix/nix.conf" ] ; then
-        echo "Creation /etc/nix/nix.conf ...."
+        echo "Found existing nix.conf in /etc/nix"
+        #echo "Creation /etc/nix/nix.conf ...."
 
-        sudo mkdir -p /etc/nix
-        echo "binary-caches = http://zalora-public-nix-cache.s3-website-ap-southeast-1.amazonaws.com/ http://cache.nixos.org/" | sudo tee /etc/nix/nix.conf
+        #sudo mkdir -p /etc/nix
+        #echo "binary-caches = http://zalora-public-nix-cache.s3-website-ap-southeast-1.amazonaws.com/ http://cache.nixos.org/" | sudo tee /etc/nix/nix.conf
     fi
 
     
@@ -86,6 +95,7 @@ function install_vundle() {
 function main() {
     copy_dotfiles
     setup_nix
+    setup_stack
 }
 
 
