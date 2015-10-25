@@ -7,7 +7,9 @@
         glibcLocales
         inotify-tools
         texLiveFull
-	sqlite
+        sqlite
+        zlib
+        autoconf
       ];
     };
 

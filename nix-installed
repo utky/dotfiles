@@ -1,2 +1,0 @@
-nixpkgs.haskellngPackages.cabal-install
-nixpkgs.haskellngPackages.cabal2nix
