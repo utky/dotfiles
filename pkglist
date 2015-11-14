@@ -13,6 +13,7 @@ caja-image-converter
 caja-open-terminal
 caja-sendto
 caja-share
+chromium
 coreutils
 cryptsetup
 device-mapper
@@ -98,6 +99,7 @@ mozo
 mplayer
 nano
 netctl
+nixnote
 ntp
 openssh
 otf-ipaexfont
@@ -113,9 +115,11 @@ perl-dbi
 perl-www-curl
 pkg-config
 pluma
+poppler-data
 procps-ng
 psmisc
 reiserfsprogs
+rxvt-unicode
 s-nail
 sed
 shadow
@@ -130,6 +134,7 @@ tar
 texinfo
 thunderbird
 thunderbird-i18n-ja
+ttf-ricty
 usbutils
 util-linux
 vi
