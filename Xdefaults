@@ -102,7 +102,7 @@ URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=t
 ! URxvt*secondaryScroll:                boolean
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
-! URxvt*perl-ext-common:                string
+URxvt*perl-ext-common:                tabbedex
 ! URxvt*perl-ext:                       string
 ! URxvt*iso14755:                       boolean
 ! URxvt*iso14755_52:                    boolean
@@ -130,3 +130,7 @@ URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=t
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
+URxvt*tabbed.new-button:                true
+URxvt*keysym.Control-t:                 perl:tabbedex:new_tab
+URxvt*keysym.Control-Tab:               perl:tabbedex:next_tab
+URxvt*keysym.Control-Shift-Tab:         perl:tabbedex:prev_tab
