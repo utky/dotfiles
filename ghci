@@ -1,3 +1,4 @@
 :set prompt "λ> "
-:def hoogle \str -> return $ ":! hoogle --count=15 \"" ++ str ++ "\""
+:def hoogle \str -> return $ ":! hoogle -d ${HOME}/.hoogle --count=15 \"" ++ str ++ "\""
+:def test  \str -> return ":! stack test"
 :set editor vim

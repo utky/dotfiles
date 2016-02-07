@@ -13,6 +13,8 @@ call vundle#begin()
 " originalrepos on github
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'scratch.vim'
+
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/ctrlp-filer'
 Plugin 'mattn/ctrlp-register'
