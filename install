@@ -73,7 +73,7 @@ function download_font() {
 }
 
 function copy_dotfiles() {
-    homefiles="ghci gvimrc vimrc zshrc gitconfig zshenv"
+    homefiles="ghci gvimrc vimrc zshrc gitconfig zshenv xprofile Xdefaults"
     pushd "${TARGET}"
     for i in ${homefiles} ; do
       ln -fs "${DOTFILES}/$i" ".$i"
