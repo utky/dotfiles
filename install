@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 SCRIPTDIR=`dirname $0`
@@ -83,13 +83,13 @@ function copy_dotfiles() {
 
 function install_ohmyzsh() {
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    cp ilyaletre.zsh-theme ${HOME}/.oh-my-zsh/themes
 }
 
 function install_vundle() {
     local bundle_path="${HOME}/.vim/bundle"
     mkdir -p ${bundle_path}
     git clone https://github.com/gmarik/Vundle.vim.git ${bundle_path}/Vundle.vim
-    cp ilyaletre.zsh-theme ${HOME}/.oh-my-zsh/themes
 }
 
 function main() {
