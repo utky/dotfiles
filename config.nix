@@ -4,31 +4,18 @@
     ilya-base = with self; buildEnv {
       name = "ilya-base";
       paths = [
-        glibcLocales
-        inotify-tools
         texLiveFull
-        sqlite
-        zlib
-        autoconf
       ];
     };
 
     ilya-haskell = self.haskell.packages.ghc7102.ghcWithPackages
                      (haskellPackages: with haskellPackages; [
-                       cabal-install
-                       cabal2nix
-                       hlint
-                       hakyll
-                       hdevtools
-                       ghc-mod
                        stack
-                       hoogle
                      ]);
 
     ilya-jvm = with self; buildEnv {
       name = "ilya-jvm";
       paths = [
-        sbt
         leiningen
       ];
     };
