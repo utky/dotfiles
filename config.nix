@@ -14,6 +14,13 @@
                        stack
                      ]);
 
+    ilya-elm = with self; buildEnv {
+      name = "ilya-elm";
+      paths = [
+        elmPackages.elm
+      ];
+    };
+
     ilya-jvm = with self; buildEnv {
       name = "ilya-jvm";
       paths = [
