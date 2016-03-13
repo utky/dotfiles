@@ -1,4 +1,0 @@
-extra-include-dirs:
-- /home/ilyaletre/.nix-profile/include
-extra-lib-dirs:
-- /home/ilyaletre/.nix-profile/lib 

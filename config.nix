@@ -4,12 +4,13 @@
     ilya-base = with self; buildEnv {
       name = "ilya-base";
       paths = [
-        texLiveFull
+        nix-repl
       ];
     };
 
-    ilya-haskell = self.haskell.packages.ghc7102.ghcWithPackages
+    ilya-haskell = self.haskell.packages.ghc7103.ghcWithPackages
                      (haskellPackages: with haskellPackages; [
+                       cabal-install
                        stack
                      ]);
 
@@ -33,7 +34,7 @@
     ilya-js = with self; buildEnv {
       name = "ilya-js";
       paths = [
-        iojs
+        nodejs
       ];
     };
 
