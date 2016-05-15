@@ -12,6 +12,7 @@
                      (haskellPackages: with haskellPackages; [
                        cabal-install
                        stack
+                       pandoc
                      ]);
 
     ilya-elm = with self; buildEnv {
