@@ -46,10 +46,9 @@
       ];
     };
 
-    ilya-ocaml = with self; buildEnv {
-      name = "ilya-ocaml";
+    ilya-coq = with self; buildEnv {
+      name = "ilya-coq";
       paths = [
-        ocaml
         coq
       ];
     };
