@@ -4,7 +4,9 @@
     ilya-base = with self; buildEnv {
       name = "ilya-base";
       paths = [
-        nix-repl
+        sqlite
+        nasm
+        gdb
       ];
     };
 
@@ -25,6 +27,7 @@
     ilya-jvm = with self; buildEnv {
       name = "ilya-jvm";
       paths = [
+        openjdk
         leiningen
       ];
     };
@@ -49,7 +52,14 @@
     ilya-coq = with self; buildEnv {
       name = "ilya-coq";
       paths = [
-        coq
+        coq_HEAD
+      ];
+    };
+
+    ilya-alloy = with self; buildEnv {
+      name = "ilya-alloy";
+      paths = [
+        alloy
       ];
     };
 

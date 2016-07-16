@@ -50,6 +50,8 @@ Plugin 'lambdatoast/elm.vim'
 "Plugin 'fuenor/im_control.vim'
 
 "Plugin 'koron/imcsc-vim', {'rtp': 'fcitx-python/'}
+"
+"Plugin 'the-lambda-church/coquille'
 
 call vundle#end()            " required
 "
@@ -336,6 +338,11 @@ function! Fcitx2zh()
       let g:input_toggle = 0
    endif
 endfunction
+
+function! ImInActivate()
+  call system('fcitx-remote -c')
+endfunction
+inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 
 set ttimeoutlen=150
 "autocmd InsertLeave * call Fcitx2en()
