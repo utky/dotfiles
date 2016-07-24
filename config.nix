@@ -10,12 +10,12 @@
       ];
     };
 
-    ilya-haskell = self.haskell.packages.ghc7103.ghcWithPackages
-                     (haskellPackages: with haskellPackages; [
-                       cabal-install
-                       stack
-                       pandoc
-                     ]);
+    ilya-haskell = with self; buildEnv {
+      name = "ilya-haskell";
+      paths = [
+        stack
+      ];
+    };
 
     ilya-elm = with self; buildEnv {
       name = "ilya-elm";
@@ -29,6 +29,7 @@
       paths = [
         openjdk
         leiningen
+        sbt
       ];
     };
 
@@ -53,6 +54,14 @@
       name = "ilya-coq";
       paths = [
         coq_HEAD
+      ];
+    };
+
+
+    ilya-scheme = with self; buildEnv {
+      name = "ilya-scheme";
+      paths = [
+        pltScheme
       ];
     };
 
