@@ -102,7 +102,7 @@ set formatoptions+=mM
 "---------------------------------------------------------------------------
 " GUI
 "---------------------------------------------------------------------------
-set number
+" set number
 set ruler
 set nolist
 set listchars=eol:<
@@ -134,7 +134,7 @@ let g:netrw_winsize=60
 let mapleader = 's'
 
 noremap! <silent> <S-CR> <ESC>
-noremap! <silent> <C-k> <ESC>
+"noremap! <silent> <C-k> <ESC>
 vnoremap <silent> <S-CR> <ESC>
 vnoremap <silent> <C-k> <ESC>
 nnoremap <silent> <S-CR> o<ESC>
