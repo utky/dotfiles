@@ -50,6 +50,13 @@
       ];
     };
 
+    ilya-ocaml = with self; buildEnv {
+      name = "ilya-ocaml";
+      paths = [
+        ocaml_4_02
+      ];
+    };
+
     ilya-coq = with self; buildEnv {
       name = "ilya-coq";
       paths = [
@@ -62,6 +69,7 @@
       name = "ilya-scheme";
       paths = [
         pltScheme
+        libedit
       ];
     };
 
@@ -69,6 +77,13 @@
       name = "ilya-alloy";
       paths = [
         alloy
+      ];
+    };
+
+    ilya-go = with self; buildEnv {
+      name = "ilya-go";
+      paths = [
+        go
       ];
     };
 
