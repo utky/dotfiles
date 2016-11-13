@@ -7,6 +7,6 @@ fi
 export TERM=xterm-256color
 export EDITOR=vim
 export MEMOLIST=$HOME/Dropbox/memolist
-export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 export SBT_OPTS="-Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M"
