@@ -54,6 +54,7 @@
       name = "ilya-ocaml";
       paths = [
         ocaml_4_02
+        opam
       ];
     };
 
