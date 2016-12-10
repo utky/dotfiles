@@ -96,6 +96,7 @@ set wrapscan
 set showmatch
 set wildmenu
 set formatoptions+=mM
+set tags=./.tags,.tags;
 "}}}
 
 " View Configuration"{{{

@@ -14,6 +14,7 @@
       name = "ilya-haskell";
       paths = [
         stack
+        haskellPackages.hasktags
       ];
     };
 
