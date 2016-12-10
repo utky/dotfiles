@@ -155,12 +155,13 @@ noremap gk k
 " noremap <Space>k <C-b>
 " nnoremap W <C-w>
 
-" inoremap { {}<Left>
-" inoremap [ []<Left>
-" inoremap " ""<Left>
-" inoremap ' ''<Left>
-" nnoremap <silent> <Leader>m :<C-u>marks<CR>
-" nnoremap <silent> <Leader>t :<C-u>tags<CR>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap ( ()<Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+nnoremap <silent> <Leader>m :<C-u>marks<CR>
+nnoremap <silent> <Leader>t :<C-u>tags<CR>
 
 nnoremap <silent> <Leader>ev :<C-u>tabedit $MYVIMRC<CR>
 nnoremap <silent> <Leader>sv :<C-u>source $MYVIMRC \| if has('gui_running') \| source $MYGVIMRC \| endif<CR>
@@ -279,7 +280,7 @@ nnoremap <silent> <Leader>f :<C-u>CtrlP<CR>
 " Memolist
 "---------------------------------------------------------------------------
 let g:memolist_path = expand('$MEMOLIST')
-let g:memolist_memo_suffix = "mkd"
+let g:memolist_memo_suffix = "md"
 let g:memolist_memo_date = "%Y-%m-%d %H:%M"
 let g:memolist_prompt_tags = 1
 let g:memolist_prompt_categories = 0
