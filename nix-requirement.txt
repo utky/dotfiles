@@ -1,2 +1,0 @@
-sudo pacman -S perl-dbi perl-dbd-sqlite libxml2 libxslt sqlite bzip2 pkg-config perl perl-www-curl
-./configure --enable-gc

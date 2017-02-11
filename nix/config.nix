@@ -4,6 +4,7 @@
     ilya-base = with self; buildEnv {
       name = "ilya-base";
       paths = [
+        gcc
         sqlite
         nasm
         gdb
@@ -14,7 +15,15 @@
       name = "ilya-haskell";
       paths = [
         stack
-        haskellPackages.hasktags
+        gmp
+        ilya-base
+      ];
+    };
+
+    ilya-js = with self; buildEnv {
+      name = "ilya-js";
+      paths = [
+        nodejs
       ];
     };
 
@@ -22,6 +31,7 @@
       name = "ilya-elm";
       paths = [
         elmPackages.elm
+        ilya-js
       ];
     };
 
@@ -40,16 +50,11 @@
         python
         pythonPackages.pip
         pythonPackages.virtualenv
-        pythonPackages.virtualenvwrapper
+        pythonPackages.sphinx
       ];
     };
 
-    ilya-js = with self; buildEnv {
-      name = "ilya-js";
-      paths = [
-        nodejs
-      ];
-    };
+
 
     ilya-ocaml = with self; buildEnv {
       name = "ilya-ocaml";

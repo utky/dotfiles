@@ -44,7 +44,8 @@ Plugin 'itchyny/lightline.vim'
 
 
 Plugin 'lambdatoast/elm.vim'
- 
+
+Plugin 'fatih/vim-go'
 
 "Plugin 'vim-scripts/fcitx.vim'
 "Plugin 'fuenor/im_control.vim'
@@ -158,7 +159,6 @@ noremap gk k
 
 inoremap { {}<Left>
 inoremap [ []<Left>
-inoremap ( ()<Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 nnoremap <silent> <Leader>m :<C-u>marks<CR>
@@ -272,7 +272,6 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtCurLeft()':         ['<c-b>'],
   \ 'PrtCurRight()':        ['<c-f>'],
   \ }
-nnoremap <silent> <Leader>f :<C-u>CtrlP<CR>
 
 "}}}
 

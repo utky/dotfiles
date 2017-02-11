@@ -13,5 +13,3 @@ for x in $(ls /tmp/fcitx-socket*); do
 done
 export FCITX_SOCKET
 export FCITX_NO_PREEDIT_APPS="true"
-
-
