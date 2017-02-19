@@ -15,6 +15,7 @@
       name = "ilya-haskell";
       paths = [
         stack
+        cabal-install
         gmp
         ilya-base
       ];
