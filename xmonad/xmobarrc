@@ -1,4 +1,4 @@
-Config { font = "-Ricty Diminished-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "-xft:Noto Sans Mono CJK JP:antialias=true-*-*-*-*-10-*-*-*-*-*-*-*"
        , additionalFonts = []
        , borderColor = "black"
        , border = TopB
@@ -27,11 +27,10 @@ Config { font = "-Ricty Diminished-*-*-*-*-10-*-*-*-*-*-*-*"
                         , "-l", "red", "-h", "green"
                         , "--", "-O", "Charging", "-o", "Battery: <left>%"
                         ] 10
-                    , Run Com "uname" ["-s","-r"] "" 36000
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Date "%a %b %_d %Y %H:%M" "date" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% | %cpu% | %memory% | %dynnetwork% | %battery% }{ %date% | %uname%"
+       , template = "%StdinReader% | %cpu% | %memory% | %dynnetwork% | %battery% }{ %date%"
        }
 
