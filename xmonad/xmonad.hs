@@ -1,17 +1,18 @@
 import XMonad
-import XMonad.Hooks.DynamicLog (statusBar, xmobarPP)
+import XMonad.Hooks.DynamicLog (statusBar, xmobarPP, ppCurrent, xmobarColor, wrap)
 import XMonad.Config.Desktop
 
 workspaces' =
   [ "1:work"
   , "2:dev"
   , "3:web"
-  , "4:media"
+  , "4:mail"
+  , "5:media"
   ] ++ map show [5..9] 
 
 baseConfig = desktopConfig
 
-config = baseConfig
+config' = baseConfig
   {
     terminal    = "urxvt"
   , modMask     = mod4Mask
@@ -19,10 +20,14 @@ config = baseConfig
   , workspaces  = workspaces'
   }
 
-xmobarcmd = "xmobar $HOME/.xmonad/xmobarrc"
-xmobar' conf = statusBar xmobarcmd xmobarPP toggleStrutsKey conf
-
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
 
-main = xmonad =<< xmobar' config
+main :: IO ()
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey config'
+
+-- Command to launch the bar.
+myBar = "xmobar"
+
+-- Custom PP, configure it as you like. It determines what is being written to the bar.
+myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
