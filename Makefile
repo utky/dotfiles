@@ -11,22 +11,24 @@ VIM_BUNDLE_PATH := ${HOME}/.vim/bundle
 LINK := ln -s
 ETC := ${CURDIR}/etc
 XCONF := /X11/xorg.conf.d
+FONTCONFIG := ${HOME}/.config/fontconfig
+FONTDIR := ${HOME}/.local/share/fonts
 
 build: archlinux dots xmonad nix vundle
 
 archlinux: install_package X11 
 
 install_package:
-	pacman -S < ${PKGLIST}
+	$(shell sudo pacman -S - < ${PKGLIST})
 
 save_package:
-	pacman -Qqe > ${PKGLIST}
+	$(pacman -Qqe > ${PKGLIST})
 
 X11:
-	${LINK} ${ETC}/locale.conf /etc/locale.conf
-	${LINK} ${ETC}/ntp.conf /etc/ntp.conf
-	${LINK} ${ETC}${XCONF}/10-keybord.conf /etc${XCONF}/10-keybord.conf
-	${LINK} ${ETC}${XCONF}/20-thinkpad.conf /etc${XCONF}/20-thinkpad.conf
+	sudo ${LINK} ${ETC}/locale.conf /etc/locale.conf
+	sudo ${LINK} ${ETC}/ntp.conf /etc/ntp.conf
+	sudo ${LINK} ${ETC}${XCONF}/10-keybord.conf /etc${XCONF}/10-keybord.conf
+	sudo ${LINK} ${ETC}${XCONF}/20-thinkpad.conf /etc${XCONF}/20-thinkpad.conf
 
 dots:
 	${SCRIPTS}/install-dots.sh install
@@ -40,10 +42,16 @@ vundle:
 	git clone ${VUNDLE_URL} ${VIM_BUNDLE_PATH}/Vundle.vim
 
 nix: prezto
-	sh -c 'curl ${NIX_URL} | sh'
+	$(shell sh -c 'curl ${NIX_URL} | sh')
+	mkdir -p ${NIX}
 	${LINK} ${NIX}/config.nix ${HOME}/.nixpkgs/config.nix
 
 xmonad:
 	mkdir -p ${XMONADDIR}
 	${LINK} ${XMONAD}/xmonad.hs ${XMONADDIR}/xmonad.hs
 	${LINK} ${XMONAD}/.xmobarrc ${XMONADDIR}/.xmobarrc
+
+font:
+	mkdir -p ${FONTCONFIG}
+	mkdir -p ${FONTDIR}
+	${LINK} ${CURDIR}/font/fonts.conf ${FONTCONFIG}/fonts.conf
