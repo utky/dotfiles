@@ -1,4 +1,4 @@
-URxvt*termName:                       xrvt
+!URxvt*termName:                       urxvt
 URxvt*geometry:                       240x50
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean
@@ -17,7 +17,7 @@ URxvt*scrollBar:                        false
 ! URxvt*scrollTtyKeypress:              boolean
 ! URxvt*scrollWithBuffer:               boolean
 URxvt*inheritPixmap:                  true
-URxvt*transparent:                    false
+URxvt*transparent:                    true
 ! URxvt*tintColor:                      color
 URxvt*shading:                        20
 ! URxvt*blurRadius:                     HxV
@@ -67,10 +67,10 @@ URxvt*foreground:                     snow
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:Ricty Discord:pixelsize=12:antialias=true
-URxvt*boldFont:                       xft:Ricty Discord:pixelsize=12:antialias=true
-URxvt*italicFont:                     xft:Ricty Discord:pixelsize=12:antialias=true
-URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=true
+URxvt*font:                           xft:Ricty Diminished:pixelsize=12:antialias=true
+! URxvt*boldFont:                       xft:Ricty Discord:pixelsize=12:antialias=true
+! URxvt*italicFont:                     xft:Ricty Discord:pixelsize=12:antialias=true
+! URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=true
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style
@@ -89,7 +89,7 @@ URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=t
 ! URxvt*internalBorder:                 number
 ! URxvt*borderLess:                     boolean
 ! URxvt*lineSpace:                      number
-! URxvt*letterSpace:                    number
+! URxvt*letterSpace:                    1
 ! URxvt*skipBuiltinGlyphs:              boolean
 ! URxvt*pointerBlankDelay:              number
 ! URxvt*backspacekey:                   string
@@ -102,9 +102,9 @@ URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=t
 ! URxvt*secondaryScroll:                boolean
 ! URxvt*perl-lib:                       string
 ! URxvt*perl-eval:                      perl-eval
-URxvt*perl-ext-common:                tabbedex,default,clipboard
+! URxvt*perl-ext-common:                tabbedex,default,clipboard
 ! URxvt*perl-ext:                       string
-URxvt*iso14755:                       false
+! URxvt*iso14755:                       false
 ! URxvt*iso14755_52:                    boolean
 ! URxvt*xrm:                            string
 ! URxvt*keysym.sym:                     keysym
@@ -130,11 +130,11 @@ URxvt*iso14755:                       false
 ! URxvt*tabbar-bg:                      colour
 ! URxvt*tabbar-fg:                      colour
 ! URxvt*url-launcher:                   string
-URxvt*tabbed.new-button:                true
-URxvt*keysym.Control-t:                 perl:tabbedex:new_tab
-URxvt*keysym.Control-Tab:               perl:tabbedex:next_tab
-URxvt*keysym.Control-Shift-Tab:         perl:tabbedex:prev_tab
-URxvt*keysym.Shift-Control-c:           perl:clipboard:copy
-URxvt*keysym.Shift-Control-v:           perl:clipboard:paste
-URxvt*clipboard.copycmd:                xsel -ib
-URxvt*clipboard.pastecmd:               xsel -ob
+! URxvt*tabbed.new-button:                true
+! URxvt*keysym.Control-t:                 perl:tabbedex:new_tab
+! URxvt*keysym.Control-Tab:               perl:tabbedex:next_tab
+! URxvt*keysym.Control-Shift-Tab:         perl:tabbedex:prev_tab
+! URxvt*keysym.Shift-Control-c:           perl:clipboard:copy
+! URxvt*keysym.Shift-Control-v:           perl:clipboard:paste
+! URxvt*clipboard.copycmd:                xsel -ib
+! URxvt*clipboard.pastecmd:               xsel -ob
