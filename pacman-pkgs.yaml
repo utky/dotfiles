@@ -5,8 +5,6 @@ base:
 
 network:
   - dialog
-  - wireless_tool
-  - wpa_actiond
   - wpa_supplicant
   - netctl
 
@@ -14,10 +12,10 @@ tool:
   - openssh
   - git
   - keepass
-  - yaourt
   - zsh
   - gvfs
   - docker
+  - tmux
 
 nix:
   - perl-dbi
@@ -32,22 +30,24 @@ nix:
 
 desktop:
   - xf86-input-synaptics
+  - xorg-xinit
   - xorg-server
   - xorg-server-utils
   - xf86-video-intel
   - xmonad
   - xmonad-contrib
   - xmobar
+  - feh
 
 lang:
   - noto-fonts
+  - noto-fonts-cjk
   - fcitx-mozc
   - fcitx-configtool
   - fcitx-im
 
 terminal:
   - rxvt-unicode
-  - urxvt-tabbedex
 
 editor:
   - gvim
@@ -58,7 +58,6 @@ virtualization:
   - vagrant
 
 web:
-  - dropbox
   - firefox
   - firefox-i18n-ja
   - thunderbird
@@ -66,4 +65,5 @@ web:
   - chromium
 
 media:
+  - alsa-utils
   - mplayer
