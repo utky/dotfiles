@@ -31,6 +31,6 @@ Config { font = "-xft:Noto Sans Mono CJK JP:antialias=true-*-*-*-*-10-*-*-*-*-*-
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% | %cpu% | %memory% | %dynnetwork% | %battery% }{ %date%"
+       , template = "%StdinReader% | %cpu% | %memory% | %battery% | %dynnetwork% }{ %date%"
        }
 

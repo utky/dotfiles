@@ -8,6 +8,7 @@
         sqlite
         nasm
         gdb
+        universal-ctags
       ];
     };
 
@@ -15,9 +16,6 @@
       name = "ilya-haskell";
       paths = [
         stack
-        cabal-install
-        gmp
-        ilya-base
       ];
     };
 
@@ -32,7 +30,6 @@
       name = "ilya-elm";
       paths = [
         elmPackages.elm
-        ilya-js
       ];
     };
 

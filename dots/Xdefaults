@@ -67,10 +67,20 @@ URxvt*foreground:                     snow
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-URxvt*font:                           xft:Ricty Diminished:pixelsize=12:antialias=true
-! URxvt*boldFont:                       xft:Ricty Discord:pixelsize=12:antialias=true
-! URxvt*italicFont:                     xft:Ricty Discord:pixelsize=12:antialias=true
-! URxvt*boldItalicFont:                 xft:Ricty Discord:pixelsize=12:antialias=true
+
+! Xft settings
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle: hintslight
+
+!URxvt.lineSpace:                    0
+!URxvt*letterSpace:                   -1
+URxvt*font:                           xft:Ricty Diminished:size=12:antialias=true
+URxvt.boldFont:                       xft:Ricty Diminished:Bold:size=12:antialias=true
+!URxvt*italicFont:                     xft:Ricty Diminished:italic:pixelsize=12:antialias=true
+!URxvt*boldItalicFont:                 xft:Ricty Diminished:pixelsize=12:antialias=true
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
 ! URxvt*preeditType:                    style

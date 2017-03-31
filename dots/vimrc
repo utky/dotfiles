@@ -157,10 +157,10 @@ noremap gk k
 " noremap <Space>k <C-b>
 " nnoremap W <C-w>
 
-inoremap { {}<Left>
-inoremap [ []<Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
+"inoremap { {}<Left>
+"inoremap [ []<Left>
+"inoremap " ""<Left>
+"inoremap ' ''<Left>
 nnoremap <silent> <Leader>m :<C-u>marks<CR>
 nnoremap <silent> <Leader>t :<C-u>tags<CR>
 
@@ -203,6 +203,11 @@ endfunction
 augroup QuickfixListener
     autocmd!
     autocmd QuickfixCmdPost vimgrep cw
+augroup END
+
+augroup Haskell
+    autocmd!
+    autocmd BufWritePost *.hs GhcModCheckAsync
 augroup END
 
 augroup FileTypeSettings
