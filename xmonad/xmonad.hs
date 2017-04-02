@@ -1,20 +1,23 @@
 import XMonad
 import XMonad.Hooks.DynamicLog (statusBar, xmobarPP, ppCurrent, xmobarColor, wrap)
+import XMonad.Hooks.SetWMName (setWMName)
 import XMonad.Config.Desktop (desktopConfig)
 
 workspaces' :: [String]
 workspaces' =
   [ "1:work"
-  , "2:dev"
-  , "3:web"
-  , "4:mail"
-  , "5:media"
-  ] ++ map show [5..9] 
+  , "2:dev-1"
+  , "3:dev-2"
+  , "4:web"
+  , "5:mail"
+  , "6:media"
+  , "7:game"
+  ] ++ map show [7..9] 
 
-baseConfig :: XConfig a
+-- baseConfig :: XConfig a
 baseConfig = desktopConfig
 
-config' :: XConfig a
+-- config' :: XConfig a
 config' = baseConfig
   {
     terminal           = "urxvt"
@@ -22,6 +25,7 @@ config' = baseConfig
   , focusedBorderColor = "#55f4b8"
   , borderWidth        = 3
   , workspaces         = workspaces'
+  , startupHook        = setWMName "LG3D"
   }
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
