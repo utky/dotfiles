@@ -38,6 +38,7 @@
       paths = [
         openjdk
         leiningen
+        boot
         sbt
       ];
     };
@@ -91,6 +92,15 @@
         go
       ];
     };
+
+    ilya-r = with self; buildEnv {
+      name = "ilya-r";
+      paths = [
+        rWrapper
+        rstudio
+      ];
+    };
+
 
   };
 }
