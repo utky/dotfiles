@@ -47,6 +47,8 @@ Plugin 'lambdatoast/elm.vim'
 
 Plugin 'fatih/vim-go'
 
+Plugin 'tpope/vim-fireplace'
+
 "Plugin 'vim-scripts/fcitx.vim'
 "Plugin 'fuenor/im_control.vim'
 
@@ -208,7 +210,7 @@ augroup END
 
 augroup Haskell
     autocmd!
-    autocmd BufWritePost *.hs GhcModCheckAsync
+    "autocmd BufWritePost *.hs GhcModCheckAsync
 augroup END
 
 augroup FileTypeSettings
@@ -274,7 +276,7 @@ let g:ilyaletre_workspace_dir=expand('~/workspace')
 "---------------------------------------------------------------------------
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_prompt_mappings = {
-  \ 'PrtBS()':              ['<c-h>'],
+  \ 'PrtBS()':              ['<c-h>', '<BS>'],
   \ 'PrtCurLeft()':         ['<c-b>'],
   \ 'PrtCurRight()':        ['<c-f>'],
   \ }
