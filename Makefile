@@ -1,10 +1,12 @@
-.PHONY: build archlinux X11 dots prezto vundle nix xmonad install_package save_package
+.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package
 
 PKGLIST := pacman-pkgs.txt
 SCRIPTS := ${CURDIR}/scripts
 NIX := ${CURDIR}/nix
 XMONAD := ${CURDIR}/xmonad
 XMONADDIR := ${HOME}/.xmonad
+LEIN := ${CURDIR}/lein
+LEINDIR := ${HOMST}/.lein
 NIX_URL := https://nixos.org/nix/install
 VUNDLE_URL := https://github.com/gmarik/Vundle.vim.git
 VIM_BUNDLE_PATH := ${HOME}/.vim/bundle
@@ -14,7 +16,7 @@ XCONF := /X11/xorg.conf.d
 FONTCONFIG := ${HOME}/.config/fontconfig
 FONTDIR := ${HOME}/.local/share/fonts
 
-build: archlinux dots xmonad nix vundle
+build: archlinux dots font xmonad lein nix vundle
 
 archlinux: install_package X11 
 
@@ -22,7 +24,7 @@ install_package:
 	$(shell sudo pacman -S - < ${PKGLIST})
 
 save_package:
-	$(pacman -Qqe > ${PKGLIST})
+	$(shell pacman -Qqe > ${PKGLIST})
 
 X11:
 	sudo ${LINK} ${ETC}/locale.conf /etc/locale.conf
@@ -50,6 +52,10 @@ xmonad:
 	mkdir -p ${XMONADDIR}
 	${LINK} ${XMONAD}/xmonad.hs ${XMONADDIR}/xmonad.hs
 	${LINK} ${XMONAD}/.xmobarrc ${XMONADDIR}/.xmobarrc
+
+lein:
+	mkdir -p ${LEINDIR}
+	${LINK} ${LEIN}/project.clj ${LEINDIR}/project.clj
 
 font:
 	mkdir -p ${FONTCONFIG}
