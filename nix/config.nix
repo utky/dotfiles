@@ -58,8 +58,10 @@
     ilya-ocaml = with self; buildEnv {
       name = "ilya-ocaml";
       paths = [
-        ocaml_4_02
+        ocaml
         opam
+        omake
+        ocamlPackages.utop
       ];
     };
 
