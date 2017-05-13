@@ -2,6 +2,7 @@ import XMonad
 import XMonad.Hooks.DynamicLog (statusBar, xmobarPP, ppCurrent, xmobarColor, wrap)
 import XMonad.Hooks.SetWMName (setWMName)
 import XMonad.Config.Desktop (desktopConfig)
+import XMonad.Util.EZConfig (additionalKeys)
 
 workspaces' :: [String]
 workspaces' =
@@ -26,7 +27,13 @@ config' = baseConfig
   , borderWidth        = 3
   , workspaces         = workspaces'
   , startupHook        = setWMName "LG3D"
+  , manageHook         = myManageHook <+> manageHook baseConfig
   }
+
+myManageHook = composeAll
+   [ className =? "Firefox"          --> doShift "4:web"
+   , className =? "Thunderbird"      --> doShift "5:mail"
+   ]
 
 toggleStrutsKey :: XConfig t -> (KeyMask, KeySym)
 toggleStrutsKey XConfig{modMask = modm} = (modm, xK_b )
