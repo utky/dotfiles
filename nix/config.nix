@@ -4,9 +4,7 @@
     ilya-base = with self; buildEnv {
       name = "ilya-base";
       paths = [
-        gcc
         sqlite
-        nasm
         gdb
         universal-ctags
       ];

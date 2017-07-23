@@ -34,6 +34,8 @@ Plugin 'glidenote/memolist.vim'
 Plugin 'dag/vim2hs'
 Plugin 'eagletmt/ghcmod-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'alex.vim'
+Plugin 'happy.vim'
 
 " UI Plugins
 Plugin 'altercation/vim-colors-solarized'
@@ -55,6 +57,7 @@ Plugin 'tpope/vim-fireplace'
 "Plugin 'koron/imcsc-vim', {'rtp': 'fcitx-python/'}
 "
 "Plugin 'the-lambda-church/coquille'
+
 
 call vundle#end()            " required
 "
@@ -145,8 +148,8 @@ vnoremap <silent> <C-k> <ESC>
 nnoremap <silent> <S-CR> o<ESC>
 
 
-nnoremap <silent> <C-Tab> :<C-u>tabn<CR>
-nnoremap <silent> <C-S-Tab> :<C-u>tabp<CR>
+"nnoremap <silent> <C-Tab> :<C-u>tabn<CR>
+"nnoremap <silent> <C-S-Tab> :<C-u>tabp<CR>
 
 noremap j gj
 noremap k gk
@@ -203,6 +206,8 @@ endfunction
 
 "---------------------------------------------------------------------------
 "---------------------------------------------------------------------------
+autocmd BufRead,BufNewFile *.x	setfiletype alex
+autocmd BufRead,BufNewFile *.y	setfiletype happy
 augroup QuickfixListener
     autocmd!
     autocmd QuickfixCmdPost vimgrep cw

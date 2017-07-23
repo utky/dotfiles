@@ -3,6 +3,7 @@ alsa-utils
 autoconf
 automake
 bash
+bc
 binutils
 bison
 bzip2
@@ -14,6 +15,7 @@ dhcpcd
 dialog
 diffutils
 dmenu
+docbook-xsl
 docker
 e2fsprogs
 efibootmgr
@@ -86,6 +88,7 @@ pkg-config
 poppler-data
 procps-ng
 psmisc
+pulseaudio
 reiserfsprogs
 rhythmbox
 rxvt-unicode
@@ -114,6 +117,7 @@ wpa_supplicant
 xf86-input-synaptics
 xf86-video-intel
 xfsprogs
+xmlto
 xmobar
 xmonad
 xmonad-contrib
