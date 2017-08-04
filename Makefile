@@ -1,4 +1,4 @@
-.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package
+.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers
 
 PKGLIST := pacman-pkgs.txt
 SCRIPTS := ${CURDIR}/scripts
@@ -10,13 +10,14 @@ LEINDIR := ${HOMST}/.lein
 NIX_URL := https://nixos.org/nix/install
 VUNDLE_URL := https://github.com/gmarik/Vundle.vim.git
 VIM_BUNDLE_PATH := ${HOME}/.vim/bundle
-LINK := ln -s
+LINK := ln -sf
 ETC := ${CURDIR}/etc
 XCONF := /X11/xorg.conf.d
 FONTCONFIG := ${HOME}/.config/fontconfig
 FONTDIR := ${HOME}/.local/share/fonts
+STACKDIR := ${HOME}/.stack
 
-build: archlinux dots font xmonad lein nix vundle
+build: archlinux dots font xmonad lein nix vundle stack standard_dirs wallpapers
 
 archlinux: install_package X11 
 
@@ -59,5 +60,19 @@ lein:
 
 font:
 	mkdir -p ${FONTCONFIG}
-	mkdir -p ${FONTDIR}
 	${LINK} ${CURDIR}/font/fonts.conf ${FONTCONFIG}/fonts.conf
+	mkdir -p ${FONTDIR}
+	tar xzf ${CURDIR} fonts.tar.gz -C ${FONTDIR}
+
+stack:
+	mkdir -p ${STACKDIR}
+	${LINK} ${CURDIR}/stack/config.yaml ${STACKDIR}/config.yaml
+
+standard_dirs:
+	mkdir -p ${HOME}/downloads
+	mkdir -p ${HOME}/pictures/wallpapers
+	mkdir -p ${HOME}/documents
+	mkdir -p ${HOME}/videos
+
+wallpapers:
+	tar xzf ${CURDIR} wallpapers.tar.gz -C ${HOME}/pictures/wallpapers
