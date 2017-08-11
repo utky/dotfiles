@@ -2,7 +2,7 @@
 
 ## About
 
-This repository includes various configuration files for my OSX environment.
+This repository includes various configuration files for my ArchLinux environment.
 
 
 ## Including configurations for
