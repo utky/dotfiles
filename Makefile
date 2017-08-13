@@ -1,4 +1,4 @@
-.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font
+.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim
 
 PKGLIST := pacman-pkgs.txt
 SCRIPTS := ${CURDIR}/scripts
@@ -17,7 +17,7 @@ FONTCONFIG := ${HOME}/.config/fontconfig
 FONTDIR := ${HOME}/.local/share/fonts
 STACKDIR := ${HOME}/.stack
 
-build: archlinux dots prezto font xmonad lein nix vundle stack standard_dirs wallpapers
+build: archlinux dots prezto nvim font xmonad lein nix vundle stack standard_dirs wallpapers
 
 #archlinux: install_package X11 
 archlinux: X11 
@@ -77,3 +77,6 @@ standard_dirs:
 
 wallpapers:
 	tar xzf ${CURDIR}/wallpapers.tar.gz -C ${HOME}/pictures/wallpapers
+
+nvim:
+	${LINK} ${CURDIR}/nvim ${HOME}/.config/nvim

@@ -19,7 +19,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/ctrlp-filer'
 Plugin 'mattn/ctrlp-register'
 
-Plugin 'Shougo/vimproc.vim'
+"Plugin 'Shougo/vimproc.vim'
 
 " Git Plugin
 Plugin 'tpope/vim-fugitive'
@@ -32,13 +32,14 @@ Plugin 'glidenote/memolist.vim'
 
 " Haskell plugin
 Plugin 'dag/vim2hs'
-Plugin 'eagletmt/ghcmod-vim'
+"Plugin 'eagletmt/ghcmod-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'alex.vim'
 Plugin 'happy.vim'
 
 " UI Plugins
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
 "Plugin 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
 "Plugin 'bling/vim-airline'
 "Plugin 'powerline/powerline'
@@ -121,6 +122,8 @@ set cmdheight=2
 set showcmd
 set title
 set nocursorline
+set background=dark
+colorscheme molokai
 
 "}}}
 
@@ -206,8 +209,6 @@ endfunction
 
 "---------------------------------------------------------------------------
 "---------------------------------------------------------------------------
-autocmd BufRead,BufNewFile *.x	setfiletype alex
-autocmd BufRead,BufNewFile *.y	setfiletype happy
 augroup QuickfixListener
     autocmd!
     autocmd QuickfixCmdPost vimgrep cw
