@@ -125,6 +125,9 @@ set nocursorline
 set background=dark
 colorscheme molokai
 
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 "}}}
 
 "---------------------------------------------------------------------------
