@@ -8,10 +8,10 @@
 # See https://docs.haskellstack.org/en/stable/yaml_configuration/#templates
 templates:
   params:
-#    author-name:
-#    author-email:
+    author-name: Yutaka Imamura
+    author-email: ilyaletre@gmail.com
 #    copyright:
-#    github-username:
+    github-username: utky
 
 
 extra-include-dirs:
