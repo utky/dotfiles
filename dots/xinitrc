@@ -4,7 +4,8 @@
 
 xset -b
 fcitx -d
-sh ~/.fehbg &
+#sh ~/.fehbg &
 # hack to make systemd communicating with dunst
-systemctl --user set-environment DISPLAY=:0
-exec xmonad
+#systemctl --user set-environment DISPLAY=:0
+#exec xmonad
+exec awesome

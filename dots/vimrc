@@ -19,7 +19,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'mattn/ctrlp-filer'
 Plugin 'mattn/ctrlp-register'
 
-"Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimproc.vim'
 
 " Git Plugin
 Plugin 'tpope/vim-fugitive'
@@ -32,17 +32,14 @@ Plugin 'glidenote/memolist.vim'
 
 " Haskell plugin
 Plugin 'dag/vim2hs'
-"Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/ghcmod-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'alex.vim'
 Plugin 'happy.vim'
+Plugin 'Twinside/vim-hoogle'
 
 " UI Plugins
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
-"Plugin 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
-"Plugin 'bling/vim-airline'
-"Plugin 'powerline/powerline'
 Plugin 'itchyny/lightline.vim'
 
 
@@ -173,6 +170,7 @@ noremap gk k
 "inoremap [ []<Left>
 "inoremap " ""<Left>
 "inoremap ' ''<Left>
+nnoremap <silent> <Leader>b :<C-u>make!<CR>
 nnoremap <silent> <Leader>m :<C-u>marks<CR>
 nnoremap <silent> <Leader>t :<C-u>tags<CR>
 
@@ -313,15 +311,6 @@ map <Leader>mg  :MemoGrep<CR>
 " Quickrun
 "---------------------------------------------------------------------------
 noremap <silent> <Leader>r :<C-u>QuickRun<CR>
-
-" airline {{{
-"---------------------------------------------------------------------------
-" airline
-"---------------------------------------------------------------------------
-"let g:airline_theme='hybridline'
-"let g:airline_detect_iminsert=1
-"let g:airline_left_sep = '»'
-"let g:airline_right_sep = '«'
 
 " lightline {{{
 

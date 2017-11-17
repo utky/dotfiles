@@ -20,4 +20,4 @@
 	amend = commit --amend
 	back = checkout "-"
 [core]
-	editor = nvim
+	editor = vim

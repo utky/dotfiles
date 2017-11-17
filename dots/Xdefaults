@@ -1,5 +1,5 @@
 !URxvt*termName:                       urxvt
-URxvt*geometry:                       240x50
+!URxvt*geometry:                       240x50
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean
 ! URxvt*loginShell:                     boolean

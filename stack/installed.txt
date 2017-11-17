@@ -1,0 +1,3 @@
+hlint
+ghc-mod
+hoogle
