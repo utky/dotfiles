@@ -1,4 +1,4 @@
-.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim
+.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim sdkman
 
 PKGLIST := pacman-pkgs.txt
 SCRIPTS := ${CURDIR}/scripts
@@ -80,3 +80,8 @@ wallpapers:
 
 nvim:
 	${LINK} ${CURDIR}/nvim ${HOME}/.config/nvim
+
+$(HOME)/.sdkman/bin/sdkman-init.sh:
+	curl -s get.sdkman.io | bash
+
+sdkman: $(HOME)/.sdkman/bin/sdkman-init.sh

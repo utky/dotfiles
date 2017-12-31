@@ -20,4 +20,7 @@ extra-lib-dirs:
   - /home/ilyaletre/.nix-profile/lib
 nix:
   enable: true
-  packages: [zlib]
+  packages: 
+  - gcc
+  - zlib
+  - ncurses
