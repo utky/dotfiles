@@ -1,4 +1,5 @@
 acpi
+adobe-source-code-pro-fonts
 alsa-utils
 autoconf
 automake
@@ -8,6 +9,7 @@ binutils
 bison
 bzip2
 cgdb
+clamav
 coreutils
 cpio
 cryptsetup
@@ -20,6 +22,7 @@ dunst
 e2fsprogs
 efibootmgr
 emacs
+emacs-mozc
 evince
 fakeroot
 fcitx
@@ -48,7 +51,9 @@ groff
 grub
 gvim
 gzip
+heroku-cli
 inetutils
+inkscape
 intel-ucode
 intellij-idea-community-edition
 iproute2
@@ -107,9 +112,6 @@ wpa_supplicant
 xf86-input-synaptics
 xf86-video-intel
 xfsprogs
-xmobar
-xmonad
-xmonad-contrib
 xorg-server
 xorg-xinit
 xorg-xprop

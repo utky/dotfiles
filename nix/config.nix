@@ -6,7 +6,7 @@
       paths = [
         sqlite
         gdb
-        universal-ctags
+        global
       ];
     };
 
