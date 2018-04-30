@@ -17,9 +17,12 @@ device-mapper
 dhcpcd
 diffutils
 dmenu
+dnsmasq
 docker
+docker-compose
 dunst
 e2fsprogs
+ebtables
 efibootmgr
 emacs
 emacs-mozc
@@ -60,9 +63,12 @@ iproute2
 iputils
 iw
 jfsutils
+jq
 keepass
 less
+libmtp
 libtool
+libvirt
 licenses
 linux
 logrotate
@@ -85,6 +91,8 @@ pkg-config
 procps-ng
 psmisc
 pulseaudio
+python-virtualenv
+python-virtualenvwrapper
 qemu
 r
 reiserfsprogs
@@ -100,10 +108,12 @@ sysfsutils
 systemd-sysvcompat
 tar
 texinfo
+the_silver_searcher
 thunderbird
 thunderbird-i18n-ja
 usbutils
 util-linux
+vagrant
 vi
 vicious
 vlc
