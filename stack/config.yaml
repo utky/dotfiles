@@ -24,3 +24,4 @@ nix:
   - gcc
   - zlib
   - ncurses
+  - glibcLocales

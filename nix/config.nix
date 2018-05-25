@@ -93,6 +93,13 @@
       ];
     };
 
+    ilya-rust = with self; buildEnv {
+      name = "ilya-rust";
+      paths = [
+        rustup
+      ];
+    };
+
     ilya-r = with self; buildEnv {
       name = "ilya-r";
       paths = [
