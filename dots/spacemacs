@@ -322,21 +322,21 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;;(set-language-environment "Japanese")
-  ;;(setq default-input-method "japanese-mozc")
-  ;;(setq mozc-candidate-style 'echo-area)
-  ;;(set-fontset-font
-  ;;  nil 'japanese-jisx0208
-  ;;  (font-spec :family "Ricty Diminished"))
-  ;;(define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
-  ;;;; Toggle input method (C-\ is still active)
-  ;;(define-key evil-insert-state-map (kbd "C-;") 'toggle-input-method)
-  ;;;; Workaround for https://github.com/syl20bnr/spacemacs/issues/9409
-  ;;;; since 2018-04-14
-  ;;(setq history-length 100)
-  ;;(put 'minibuffer-history 'history-length 50)
-  ;;(put 'evil-ex-history 'history-length 50)
-  ;;(put 'kill-ring 'history-length 25)
+  (set-language-environment "Japanese")
+  (setq default-input-method "japanese-mozc")
+  (setq mozc-candidate-style 'echo-area)
+  (set-fontset-font
+    nil 'japanese-jisx0208
+    (font-spec :family "Ricty Diminished"))
+  (define-key evil-insert-state-map (kbd "C-h") 'delete-backward-char)
+  ;; Toggle input method (C-\ is still active)
+  (define-key evil-insert-state-map (kbd "C-;") 'toggle-input-method)
+  ;; Workaround for https://github.com/syl20bnr/spacemacs/issues/9409
+  ;; since 2018-04-14
+  (setq history-length 100)
+  (put 'minibuffer-history 'history-length 50)
+  (put 'evil-ex-history 'history-length 50)
+  (put 'kill-ring 'history-length 25)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
