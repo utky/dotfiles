@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     html
      markdown
      ansible
      ;; ----------------------------------------------------------------
@@ -54,12 +55,12 @@ values."
      ;; version-control
      haskell
      clojure
+     c-c++
      ;;sml
      ;;html
      ;;lua
      ;;python
      ;;javascript
-     ;;c-c++
      ;;yaml
      )
    ;; List of additional packages that will be installed without being
