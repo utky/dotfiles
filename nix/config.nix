@@ -44,6 +44,7 @@
     ilya-python = with self; buildEnv {
       name = "ilya-python";
       paths = [
+        libffi
         python
         pythonPackages.pip
         pythonPackages.virtualenv
