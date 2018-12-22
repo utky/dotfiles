@@ -16,8 +16,8 @@ require("awful.hotkeys_popup.keys")
 
 local vicious = require("vicious")
 
--- require("battery")
--- require("wireless")
+require("battery")
+require("wireless")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
