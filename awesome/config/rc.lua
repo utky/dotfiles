@@ -15,9 +15,10 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 
 local vicious = require("vicious")
-
+local xrandr = require("xrandr")
 require("battery")
 require("wireless")
+
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -47,7 +48,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.wallpaper = "/home/ilyaletre/pictures/wallpapers/space-haskell.jpg"
+beautiful.wallpaper = "/home/ilyaletre/pictures/wallpapers/wallpaper"
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
@@ -341,7 +342,12 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Multi disply
+    awful.key({ modkey }, "m", function() xrandr.xrandr() end,
+             {description = "arrange multiple monitor", group = "awesome"})
+   
 )
 
 clientkeys = gears.table.join(
