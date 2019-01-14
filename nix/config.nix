@@ -7,6 +7,7 @@
         sqlite
         gdb
         global
+        plantuml
       ];
     };
 
