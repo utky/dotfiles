@@ -2,19 +2,11 @@
   packageOverrides = super:
     let
       self = super.pkgs;
-      python-stats-packages = python-packages: with python-packages; [
-        pandas
-        scipy
-        jupyter
-        matplotlib
-      ];
-      my-python = super.pkgs.python3.withPackages python-stats-packages;
     in
       {
         ilya = with self; buildEnv {
           name = "ilya";
           paths = [
-            nix-repl
             sqlite
             gdb
             global
@@ -24,15 +16,31 @@
             openjdk
             leiningen
             go
-            chicken
+            dep
+            gauche
             gitAndTools.hub
           ];
         };
-        ilya-python = with self; buildEnv {
-          name = "ilya-python";
-          paths = [
-            my-python
-          ];
+        ilya-jupyter = self.jupyter.override {
+          definitions = {
+            python3 = let
+              env = (self.python3.withPackages (ps: with ps; [
+              numpy scipy matplotlib ipykernel
+              ]));
+            in {
+              displayName = "Python 3";
+              argv = [
+                "${env.interpreter}"
+                "-m"
+                "ipykernel_launcher"
+                "-f"
+                "{connection_file}"
+              ];
+              language = "python";
+              logo32 = "${env.sitePackages}/ipykernel/resources/logo-32x32.png";
+              logo64 = "${env.sitePackages}/ipykernel/resources/logo-64x64.png";
+           };
+          };
         };
       };
 }

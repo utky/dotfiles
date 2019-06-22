@@ -10,7 +10,7 @@ flags: {}
 extra-package-dbs: []
 packages: []
 extra-deps: []
-resolver: lts-11.22
+resolver: lts-13.11
 
 nix:
   enable: true

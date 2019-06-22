@@ -43,19 +43,18 @@ Plugin 'tomasr/molokai'
 Plugin 'itchyny/lightline.vim'
 
 
+" Elm Plugins
 Plugin 'lambdatoast/elm.vim'
 
+" Go Plugins
 Plugin 'fatih/vim-go'
 
+" Clojure Plugins
 Plugin 'tpope/vim-fireplace'
 
-"Plugin 'vim-scripts/fcitx.vim'
-"Plugin 'fuenor/im_control.vim'
-
-"Plugin 'koron/imcsc-vim', {'rtp': 'fcitx-python/'}
-"
-"Plugin 'the-lambda-church/coquille'
-
+" Scheme Plugins
+Plugin 'paredit.vim'
+Plugin 'git://github.com/aharisu/vim_goshrepl.git'
 
 call vundle#end()            " required
 "
@@ -142,7 +141,7 @@ let g:netrw_winsize=60
 " Key Mapping Configuration"{{{
 "---------------------------------------------------------------------------
 "---------------------------------------------------------------------------
-let mapleader = 's'
+let mapleader = "\<Space>"
 
 noremap! <silent> <S-CR> <ESC>
 "noremap! <silent> <C-k> <ESC>
@@ -170,7 +169,7 @@ noremap gk k
 "inoremap [ []<Left>
 "inoremap " ""<Left>
 "inoremap ' ''<Left>
-nnoremap <silent> <Leader>b :<C-u>make!<CR>
+nnoremap <silent> <Leader>b :<C-u>buffers<CR>
 nnoremap <silent> <Leader>m :<C-u>marks<CR>
 nnoremap <silent> <Leader>t :<C-u>tags<CR>
 
@@ -354,4 +353,13 @@ inoremap <silent> <C-[> <ESC>:call ImInActivate()<CR>
 set ttimeoutlen=150
 "autocmd InsertLeave * call Fcitx2en()
 "autocmd InsertEnter * call Fcitx2zh()
+
+" GoshREPL"{{{
+"---------------------------------------------------------------------------
+" GoshREPL
+"---------------------------------------------------------------------------
+augroup scheme
+  autocmd! scheme
+  autocmd Filetype scheme vmap <buffer> <silent> <CR> <Plug>(gosh_repl_send_block)
+augroup end
 

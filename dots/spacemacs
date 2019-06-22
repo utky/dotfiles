@@ -42,7 +42,7 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     auto-completion (haskell :variables haskell-completion-backend 'intero)
+     ;; auto-completion (haskell :variables haskell-completion-backend 'intero)
      ;; better-defaults
      emacs-lisp
      git
