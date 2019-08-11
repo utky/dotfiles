@@ -1,4 +1,4 @@
-.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim sdkman
+.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim sdkman vscode
 
 PKGLIST := pacman-pkgs.txt
 SCRIPTS := ${CURDIR}/scripts
@@ -85,3 +85,7 @@ $(HOME)/.sdkman/bin/sdkman-init.sh:
 	curl -s get.sdkman.io | bash
 
 sdkman: $(HOME)/.sdkman/bin/sdkman-init.sh
+
+vscode: ${CURDIR}/vscode/settings.json
+	mkdir -p ${HOME}/.config/Code/User
+	ln -sf ${CURDIR}/vscode/settings.json ${HOME}/.config/Code/User/settings.json

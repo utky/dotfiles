@@ -1,0 +1,11 @@
+{
+    "vim.autoSwitchInputMethod.defaultIM": "fcitx-keyboard-us",
+    "vim.autoSwitchInputMethod.enable": true,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/bin/fcitx-remote",
+    "vim.autoSwitchInputMethod.switchIMCmd": "/usr/bin/fcitx-remote -s {im}",
+    "vim.leader": " space",
+    "vim.useSystemClipboard": true,
+    "languageServerHaskell.hieExecutablePath": "/home/ilyaletre/.nix-profile/bin/hie",
+    "languageServerHaskell.useCustomHieWrapperPath": "/home/ilyaletre/.nix-profile/bin/hie-wrapper",
+    "languageServerHaskell.useCustomHieWrapper": true
+}
