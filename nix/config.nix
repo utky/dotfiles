@@ -1,3 +1,5 @@
+# https://github.com/Infinisil/all-hies/
+# nix-env -iA selection --arg selector 'p: { inherit (p) ghc864; }' -f https://github.com/infinisil/all-hies/tarball/master
 {
   packageOverrides = super:
     let
@@ -19,6 +21,10 @@
             dep
             gauche
             gitAndTools.hub
+            ruby
+            nodejs
+            alloy
+            cachix
           ];
         };
         ilya-jupyter = self.jupyter.override {

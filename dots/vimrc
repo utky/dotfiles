@@ -170,7 +170,7 @@ noremap gk k
 "inoremap " ""<Left>
 "inoremap ' ''<Left>
 nnoremap <silent> <Leader>b :<C-u>buffers<CR>
-nnoremap <silent> <Leader>m :<C-u>marks<CR>
+nnoremap <silent> <Leader>k :<C-u>marks<CR>
 nnoremap <silent> <Leader>t :<C-u>tags<CR>
 
 nnoremap <silent> <Leader>ev :<C-u>tabedit $MYVIMRC<CR>
@@ -361,5 +361,6 @@ set ttimeoutlen=150
 augroup scheme
   autocmd! scheme
   autocmd Filetype scheme vmap <buffer> <silent> <CR> <Plug>(gosh_repl_send_block)
+  autocmd Filetype scheme nnoremap <buffer> <silent> <Leader>ms :<C-u>GoshREPLWithBufferH<CR>
 augroup end
 
