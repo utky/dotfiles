@@ -7,5 +7,13 @@
     "vim.useSystemClipboard": true,
     "languageServerHaskell.hieExecutablePath": "/home/ilyaletre/.nix-profile/bin/hie",
     "languageServerHaskell.useCustomHieWrapperPath": "/home/ilyaletre/.nix-profile/bin/hie-wrapper",
-    "languageServerHaskell.useCustomHieWrapper": true
+    "languageServerHaskell.useCustomHieWrapper": true,
+    "window.zoomLevel": 0,
+    "vim.statusBarColorControl": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "go.useLanguageServer": true
 }

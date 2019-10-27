@@ -16,8 +16,9 @@
 	stashes = stash list
 	remotes = remote -v
 	what = show -w
-	rewrite = rebase -i
+	rewrite = rebase -i --autosqash
 	amend = commit --amend
 	back = checkout "-"
+    upload = push origin HEAD
 [core]
 	editor = vim

@@ -18,6 +18,6 @@ mkShell rec {
   shellHook = ''
     export JUPYTER_PATH=${jupyter-R-kernel}/share/jupyter
     # see https://github.com/NixOS/nixpkgs/issues/38733
-    ${R-with-my-packages}/bin/R --slave -e "system2('jupyter', 'notebook')"
+    ${R-with-my-packages}/bin/R --slave -e "system('${pythonPackages.notebook}/bin/jupyter-notebook')"
   '';
 }
