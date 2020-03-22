@@ -1,0 +1,41 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+if [ -f "${HOME}/.nix-profile/etc/profile.d/nix.sh" ] ; then
+    . $HOME/.nix-profile/etc/profile.d/nix.sh
+fi
+
+if [ -d "${HOME}/.local/bin" ] ; then
+    export PATH="${HOME}/.local/bin:${PATH}"
+fi
+
+if [ -d "${HOME}/.cargo/bin" ] ; then
+    export PATH="${HOME}/.cargo/bin:${PATH}"
+fi
+
+if [ -d "${HOME}/.rbenv/bin" ] ; then
+    export PATH="${HOME}/.rbenv/bin:${PATH}"
+fi
+
+# Editors
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+
+# Language
+if [[ -z "$LANG" ]]; then
+  export LANG='en_US.UTF-8'
+fi
+# Vars for tools
+export MEMOLIST="${HOME}/workspace/memolist"
+export IDEA_JDK=/usr/lib/jvm/java-8-openjdk
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
