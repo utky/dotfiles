@@ -1,4 +1,4 @@
-.PHONY: build archlinux X11 dots prezto vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim sdkman vscode
+.PHONY: build archlinux X11 dots zfiles vundle nix xmonad lein install_package save_package stack standard_dirs wallpapers font nvim sdkman vscode
 
 PKGLIST := pacman-pkgs.txt
 SCRIPTS := ${CURDIR}/scripts
@@ -17,7 +17,7 @@ FONTCONFIG := ${HOME}/.config/fontconfig
 FONTDIR := ${HOME}/.local/share/fonts
 STACKDIR := ${HOME}/.stack
 
-build: archlinux dots prezto nvim font xmonad lein nix vundle stack standard_dirs wallpapers
+build: archlinux dots zfiles nvim font xmonad lein nix vundle stack standard_dirs wallpapers
 
 #archlinux: install_package X11 
 archlinux: X11 
@@ -38,7 +38,7 @@ dots:
 	${SCRIPTS}/install-dots.sh install
 
 
-prezto:
+zfiles:
 	${SCRIPTS}/install-zfiles.sh
 
 vundle:
