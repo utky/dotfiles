@@ -26,11 +26,13 @@ parse_git_dirty() {
 # if in a git repo, show dirty indicator + git branch
 git_custom_status() {
   local git_where="$(parse_git_branch)"
-  [ -n "$git_where" ] && echo "$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX${git_where#(refs/heads/|tags/)}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  [ -n "$git_where" ] && echo " $(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_PREFIX${git_where#(refs/heads/|tags/)}$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
 
-RPS1='$(git_custom_status) $EPS1'
+#RPS1='$(git_custom_status) $EPS1'
 
 # basic prompt on the left
-PROMPT='%{$fg[cyan]%}%~% %(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+#PROMPT='%{$fg[white]%}%~% $(git_custom_status) %(?.%{$fg[white]%}.%{$fg[red]%})$ '
+PROMPT='$fg[cyan]%*$reset_color $fg[white]%n@%m:%~$(git_custom_status) $reset_color
+ %# '
