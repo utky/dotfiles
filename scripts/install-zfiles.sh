@@ -1,14 +1,11 @@
 #!/bin/zsh
+ANTIGEN_DIR="${HOME}/.local/share/antigen"
+ANTIGEN_PATH="${ANTIGEN_DIR}/antigen.zsh"
 
-ZPREZTO="${ZDOTDIR:-$HOME}/.zprezto"
-
-if [ ! -d "${ZPREZTO}" ]; then
-  git clone --recursive git@github.com:utky/prezto.git ${ZPREZTO}
+if [ ! -d "${ANTIGEN_DIR}" ]; then
+  mkdir -p "${ANTIGEN_DIR}"
 fi
 
-setopt EXTENDED_GLOB
-for rcfile in ${ZPREZTO}/runcoms/^README.md(.N); do
-  if [ ! -f "${ZDOTDIR:-$HOME}/.${rcfile:t}" ]; then
-    ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-  fi
-done
+if [ ! -f "${ANTIGEN_PATH}" ]; then
+  curl -L git.io/antigen > "${ANTIGEN_PATH}"
+fi
