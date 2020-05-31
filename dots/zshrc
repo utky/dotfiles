@@ -33,6 +33,9 @@ alias sdown="amixer set Master 5%-"
 alias suspend="systemctl suspend"
 alias ku="kubectl"
 alias less='less -Q'
+alias ls='ls --color=auto'
+alias ll='ls -la'
+alias l.='ls -d .* --color=auto'
 alias man='man -P "less -Q"'
 alias nshell="nix-shell --command /usr/bin/zsh"
 alias rsend="rsync -av"

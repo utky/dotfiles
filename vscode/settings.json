@@ -15,5 +15,7 @@
         "statusBar.noFolderBackground": "#005f5f",
         "statusBar.debuggingBackground": "#005f5f"
     },
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "editor.minimap.enabled": false,
+    "editor.tabSize": 2
 }

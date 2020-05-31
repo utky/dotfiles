@@ -16,6 +16,11 @@ parse_git_branch() {
 
 # show red star if there are uncommitted changes
 parse_git_dirty() {
+DISABLE_UNTRACKED_FILES_DIRTY
+  if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
+    return 0
+  fi
+
   if command git diff-index --quiet HEAD 2> /dev/null; then
     echo "$ZSH_THEME_GIT_PROMPT_CLEAN"
   else
