@@ -16,7 +16,6 @@ parse_git_branch() {
 
 # show red star if there are uncommitted changes
 parse_git_dirty() {
-DISABLE_UNTRACKED_FILES_DIRTY
   if [[ "$DISABLE_UNTRACKED_FILES_DIRTY" == "true" ]]; then
     return 0
   fi
