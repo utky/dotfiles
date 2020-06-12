@@ -1,0 +1,13 @@
+{
+    "remote.SSH.remotePlatform": {
+        "default": "linux"
+    },
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "editor.tabSize": 2,
+    "vim.autoSwitchInputMethod.obtainIMCmd": "C:\\\\Users\\\\ilyal\\\\.local\\\\bin\\\\zenhan.exe",
+    "vim.autoSwitchInputMethod.switchIMCmd": "C:\\\\Users\\\\ilyal\\\\.local\\\\bin\\\\zenhan.exe {im}",
+    "vim.autoSwitchInputMethod.defaultIM": "0",
+    "vim.autoSwitchInputMethod.enable": true
+}
