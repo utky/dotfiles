@@ -39,6 +39,7 @@ alias l.='ls -d .* --color=auto'
 alias man='man -P "less -Q"'
 alias nshell="nix-shell --command /usr/bin/zsh"
 alias rsend="rsync -av"
+alias play="ansible-playbook"
 
 eval "$(rbenv init -)"
 

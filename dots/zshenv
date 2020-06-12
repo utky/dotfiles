@@ -39,3 +39,7 @@ fi
 export MEMOLIST="${HOME}/workspace/memolist"
 export IDEA_JDK=/usr/lib/jvm/java-8-openjdk
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
+
+# Ansible envs
+export ANSIBLE_INVENTORY=inventory.yaml
+
