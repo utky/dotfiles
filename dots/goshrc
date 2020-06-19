@@ -1,1 +1,3 @@
 (add-load-path ".")
+(define (rmm)
+  (reload-modified-modules))
