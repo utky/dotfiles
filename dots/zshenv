@@ -43,3 +43,4 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # Ansible envs
 export ANSIBLE_INVENTORY=inventory.yaml
 
+alias gosh="gosh -l ~/.goshrc"
