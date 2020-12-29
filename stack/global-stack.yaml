@@ -11,7 +11,7 @@ extra-package-dbs: []
 packages: []
 extra-deps: []
 # ghc 8.6.3
-resolver: lts-13.11
+resolver: lts-16.11
 
-nix:
-  enable: true
+#nix:
+#  enable: true

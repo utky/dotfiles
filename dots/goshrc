@@ -1,2 +1,3 @@
+(use gauche.reload)
 (define (rmm)
   (reload-modified-modules))

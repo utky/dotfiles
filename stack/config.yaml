@@ -14,14 +14,14 @@ templates:
     github-username: utky
 
 
-extra-include-dirs:
-  - /home/ilyaletre/.nix-profile/include
-extra-lib-dirs:
-  - /home/ilyaletre/.nix-profile/lib
-nix:
-  enable: true
-  packages: 
-  - gcc
-  - zlib
-  - ncurses
-  - glibcLocales
+#extra-include-dirs:
+#  - /home/ilyaletre/.nix-profile/include
+#extra-lib-dirs:
+#  - /home/ilyaletre/.nix-profile/lib
+#nix:
+#  enable: true
+#  packages: 
+#  - gcc
+#  - zlib
+#  - ncurses
+#  - glibcLocales
