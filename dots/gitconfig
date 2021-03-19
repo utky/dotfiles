@@ -20,5 +20,6 @@
 	amend = commit --amend
 	back = checkout "-"
     upload = push origin HEAD
+    uploadf = push -f origin HEAD
 [core]
 	editor = vim
