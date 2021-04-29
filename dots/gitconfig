@@ -23,3 +23,5 @@
     uploadf = push -f origin HEAD
 [core]
 	editor = vim
+[init]
+	defaultBranch = main
