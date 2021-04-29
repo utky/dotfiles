@@ -46,3 +46,4 @@ export ANSIBLE_INVENTORY=inventory.yaml
 # Gauche Scheme
 export GAUCHE_LOAD_PATH=".:${HOME}/.local/lib/gauche_uer"
 alias gosh="rlwrap gosh -l ~/.goshrc"
+source "$HOME/.cargo/env"
