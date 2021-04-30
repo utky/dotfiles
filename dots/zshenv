@@ -26,6 +26,15 @@ if [ -d "${HOME}/.rbenv/bin" ] ; then
     export PATH="${HOME}/.rbenv/bin:${PATH}"
 fi
 
+# Google Cloud SDK
+if [ -f "${HOME}/.local/share/gcloud/google-cloud-sdk/completion.zsh.inc" ] ; then
+  source "${HOME}/.local/share/gcloud/google-cloud-sdk/completion.zsh.inc"
+fi
+
+if [ -f "${HOME}/.local/share/gcloud/google-cloud-sdk/path.zsh.inc" ] ; then
+  source "${HOME}/.local/share/gcloud/google-cloud-sdk/path.zsh.inc"
+fi
+
 # Editors
 export EDITOR='vim'
 export VISUAL='vim'
